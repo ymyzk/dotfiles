@@ -2,3 +2,4 @@ html5.vim
 molokai
 neobundle.vim
 neocomplcache.vim
+vim-css3-syntax

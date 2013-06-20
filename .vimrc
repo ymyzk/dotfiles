@@ -24,10 +24,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Original repos on github
 "
 
-"HTML5
+" HTML5
 NeoBundle 'othree/html5.vim'
 
-"Auto completion
+" CSS3
+NeoBundle 'hail2u/vim-css3-syntax'
+
+" Auto completion
 NeoBundle 'Shougo/neocomplcache.vim'
 
 " Color scheme
