@@ -57,13 +57,48 @@ zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'b
 setopt noautoremoveslash
 
 # Git
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '(%s)-[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+
+function rprompt-git-current-branch {
+    local name st color gitdir action
+    if [[ "$PWD" =~ '/¥.git(/.*)?$' ]]; then
+        return
+    fi
+
+    name=`git rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
+    if [[ -z $name ]]; then
+        return
+    fi
+
+    gitdir=`git rev-parse --git-dir 2> /dev/null`
+    action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
+
+    st=`git status 2> /dev/null`
+    if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+        color=%F{green}
+    elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+        color=%F{yellow}
+    elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+        color=%B%F{red}
+    else
+        color=%F{red}
+    fi
+
+    echo "${color}(git)-[$name]$action%f%b"
 }
-RPROMPT="%1(v|%F{green}%1v%f|)"
+
+setopt prompt_subst
+
+RPROMPT='`rprompt-git-current-branch`'
+
+# Old Git
+#autoload -Uz vcs_info
+#zstyle ':vcs_info:*' formats '(%s)-[%b]'
+#zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+#precmd () {
+#    psvar=()
+#    LANG=en_US.UTF-8 vcs_info
+#    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+#}
+#RPROMPT="%1(v|%F{green}%1v%f|)"
 
