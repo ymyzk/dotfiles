@@ -1,6 +1,34 @@
-" Features
-
 set nocompatible
+
+
+" NeoBundle
+
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+"NeoBundle 'Shougo/vimproc
+
+" My Bundles here:
+"
+" Note: You don't set neobundle setting in .gvimrc!
+" Original repos on github
+"
+
+" Color scheme
+NeoBundle 'tomasr/molokai'
+
+
+" Features
 
 filetype indent plugin on
 
@@ -74,6 +102,7 @@ set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 
 set cursorline
 
+
 " Auto complete
 
 function! InsertTabWrapper()
@@ -90,4 +119,13 @@ function! InsertTabWrapper()
 endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" Installation check.
+NeoBundleCheck
 
