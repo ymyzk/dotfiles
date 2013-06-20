@@ -33,6 +33,9 @@ NeoBundle 'hail2u/vim-css3-syntax'
 " Auto completion
 NeoBundle 'Shougo/neocomplcache.vim'
 
+" ZenCoding
+NeoBundle 'mattn/zencoding-vim'
+
 " Color scheme
 NeoBundle 'tomasr/molokai'
 
@@ -113,6 +116,7 @@ set cursorline
 
 
 " Auto complete
+
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
