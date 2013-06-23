@@ -1,0 +1,22 @@
+[include]
+    path = ~/.gitconfig.local
+
+[color]
+    ui = auto
+
+[core]
+    editor = /usr/bin/vim
+
+[alias]
+    cl = clone
+    cm = commit
+    co = checkout
+    df = diff
+    dfs = diff -C --stat
+    sb = show-branch
+    sh = show
+    st = status
+    l = log
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+
