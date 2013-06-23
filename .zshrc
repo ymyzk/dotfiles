@@ -31,7 +31,7 @@ setopt hist_ignore_dups # Igcore dupulication command History
 setopt share_history
 
 # Move current directory without cd command
-# setopt auto_cd
+setopt auto_cd
 
 # Remember current directories
 # cd -<TAB>
@@ -101,4 +101,30 @@ RPROMPT='`rprompt-git-current-branch`'
 #    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 #}
 #RPROMPT="%1(v|%F{green}%1v%f|)"
+
+# Suffix alias
+alias -s py=python
+
+if [ `uname` = "Darwin" ]; then
+    alias -s {png,jpg,bmp,PNG,JPG,BMP}='open -a Preview'
+else
+    alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
+fi
+
+function extract() {
+    case $1 in
+        *.tar.gz|*.tgz) tar xzvf $1;;
+        *.tar.xz) tar Jxvf $1;;
+        *.zip) unzip $1;;
+        *.lzh) lha e $1;;
+        *.tar.bz2|*.tbz) tar xjvf $1;;
+        *.tar.Z) tar zxvf $1;;
+        *.gz) gzip -dc $1;;
+        *.bz2) bzip2 -dc $1;;
+        *.Z) uncompress $1;;
+        *.tar) tar xvf $1;;
+        *.arj) unarj $1;;
+    esac
+}
+alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 
