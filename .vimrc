@@ -39,6 +39,9 @@ NeoBundle 'mattn/zencoding-vim'
 " Color scheme
 NeoBundle 'tomasr/molokai'
 
+" My bundle
+NeoBundle 'litesystems/dotvim'
+
 " Brief help
 " :NeoBundleList          - list configured bundles
 " :NeoBundleInstall(!)    - install(update) bundles
