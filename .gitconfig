@@ -11,6 +11,7 @@
     cl = clone
     cm = commit
     co = checkout
+    cob = checkout -b
     df = diff
     dfs = diff -C --stat
     sb = show-branch
