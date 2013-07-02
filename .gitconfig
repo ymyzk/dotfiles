@@ -8,10 +8,12 @@
     editor = /usr/bin/vim
 
 [alias]
+    br = branch
     cl = clone
     cm = commit
     co = checkout
     cob = checkout -b
+    cod = checkout develop
     df = diff
     dfs = diff -C --stat
     sb = show-branch
