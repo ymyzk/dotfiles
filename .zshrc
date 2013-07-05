@@ -14,15 +14,6 @@ compinit
 PROMPT="${USER}@${HOST%%.*}: %~
 %(!.#.$) "
 
-# Title
-# Not working?
-#case "${TERM}" in kterm*|xterm)
-#    precmd() {
-#        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-#    }
-#;;
-#esac
-
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
