@@ -1,14 +1,10 @@
 set nocompatible
 
-
 " NeoBundle
-
 filetype off
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
@@ -26,19 +22,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " HTML5
 NeoBundle 'othree/html5.vim'
-
 " CSS3
 NeoBundle 'hail2u/vim-css3-syntax'
-
 " Auto completion
 NeoBundle 'Shougo/neocomplcache.vim'
-
 " ZenCoding
 NeoBundle 'mattn/zencoding-vim'
-
 " Color scheme
 NeoBundle 'tomasr/molokai'
-
 " My bundle
 NeoBundle 'litesystems/dotvim'
 
@@ -50,85 +41,52 @@ NeoBundle 'litesystems/dotvim'
 " Installation check.
 NeoBundleCheck
 
-
 " Features
-
 filetype indent plugin on
-
 syntax on
 
-
 " Must have options
-
 set hidden
-
 set wildmenu
-
 set showcmd
-
 set hlsearch
-
 "set nomodeline
 
 " Usability options
-
 set ignorecase
 set smartcase
-
 set backspace=indent,eol,start
-
 set autoindent
-
 set nostartofline
-
 set ruler
-
-set laststatus=2
-
+set laststatus=1
 set confirm
-
 set visualbell
-
 set t_vb=
-
 set mouse=a
-
-set cmdheight=1 "2
-
+set cmdheight=2
 set number
-
 set notimeout ttimeout ttimeoutlen=200
-
 set pastetoggle=<F11>
 
-
 " Indentation options
-
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
 "set shiftwidth=4
 "set tabstop=4
 
-
 " Color scheme
-
 colorscheme molokai
 
 " Visual options
-
 set list
-
 " set listchars=eol:↲,tab:>\ ,trail:-,extends:»,precedes:«,nbsp:%
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
-
 set cursorline
 
-
 " Auto complete
-
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
