@@ -14,7 +14,7 @@
     co  = checkout
     cob = checkout -b
     cod = checkout develop
-    cod = checkout master
+    com = checkout master
     df  = diff
     dfs = diff -C --stat
     pl  = pull
