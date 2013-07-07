@@ -19,6 +19,7 @@
     dfs = diff -C --stat
     pl  = pull
     ps  = push
+    pst = push --tags
     sb  = show-branch
     sh  = show
     st  = status
