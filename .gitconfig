@@ -8,22 +8,25 @@
     editor = /usr/bin/vim
 
 [alias]
-    br  = branch
-    cl  = clone
-    cm  = commit
-    co  = checkout
-    cob = checkout -b
-    cod = checkout develop
-    com = checkout master
-    df  = diff
-    dfs = diff -C --stat
-    pl  = pull
-    ps  = push
-    pst = push --tags
-    sb  = show-branch
-    sh  = show
-    st  = status
-    l   = log
-    lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-    lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+    br      = branch
+    cl      = clone
+    cm      = commit
+    co      = checkout
+    cob     = checkout -b
+    cod     = checkout develop
+    com     = checkout master
+    df      = diff
+    dfs     = diff -C --stat
+    pl      = pull
+    ps      = push
+    pst     = push --tags
+    sb      = show-branch
+    sh      = show
+    sm      = submodule
+    smst    = submodule status
+    smsync  = submodule sync
+    st      = status
+    l       = log
+    lg      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+    lga     = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 
