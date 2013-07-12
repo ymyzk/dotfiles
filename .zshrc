@@ -40,8 +40,8 @@ setopt correct
 setopt nolistbeep
 
 # Predict completion
-#autoload predict-on
-#predict-on
+autoload predict-on
+predict-on
 
 # Color
 export LSCOLORS=ExFxCxdxBxegedabagacad
