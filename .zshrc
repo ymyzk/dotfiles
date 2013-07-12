@@ -36,7 +36,8 @@ setopt auto_pushd
 # Auto correction
 setopt correct
 
-# No beep on completion
+# No beep
+setopt nobeep
 setopt nolistbeep
 
 # Predict completion
@@ -100,6 +101,8 @@ RPROMPT='`rprompt-git-current-branch`'
 
 # Suffix alias
 alias -s py=python
+
+alias -s txt=cat
 
 if [ `uname` = "Darwin" ]; then
     alias -s {png,jpg,bmp,PNG,JPG,BMP}='open -a Preview'
