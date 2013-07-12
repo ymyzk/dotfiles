@@ -5,6 +5,9 @@
 # Language setting
 export LANG=ja_JP.UTF-8
 
+# Editor setting
+export EDITOR=vim
+
 # Auto complete
 autoload -Uz compinit
 compinit
