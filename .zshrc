@@ -10,9 +10,11 @@ autoload -Uz compinit
 compinit
 
 # Prompt
-#PROMPT="${HOST%%.*}:%1~ ${USER}%(!.#.$) "
-PROMPT="${USER}@${HOST%%.*}: %~
-%(!.#.$) "
+local p_uh="%n@%m${WINDOW+[$WINDOW]}"
+local p_cd="%B%F{blue}%~%f%b"
+local p_pr="%(!,#,$)"
+PROMPT="$p_uh: $p_cd
+$p_pr "
 
 # History
 HISTFILE=~/.zsh_history
