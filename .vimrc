@@ -26,8 +26,14 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 " Auto completion
 NeoBundle 'Shougo/neocomplcache.vim'
+" Unite
+NeoBundle 'Shougo/unite.vim'
 " ZenCoding
 NeoBundle 'mattn/zencoding-vim'
+" QuickRun
+NeoBundle 'thinca/vim-quickrun'
+" Powerline
+NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 " Color scheme
 NeoBundle 'tomasr/molokai'
 " My bundle
@@ -59,12 +65,12 @@ set backspace=indent,eol,start
 set autoindent
 set nostartofline
 set ruler
-set laststatus=1
+set laststatus=2
 set confirm
 set visualbell
 set t_vb=
 set mouse=a
-set cmdheight=2
+set cmdheight=1
 set number
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>

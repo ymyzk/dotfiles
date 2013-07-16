@@ -13,7 +13,7 @@ autoload -Uz compinit
 compinit
 
 # Prompt
-local p_uh="%n@%m${WINDOW+[$WINDOW]}"
+local p_uh="%F{green}%n@%m%f${WINDOW+[$WINDOW]}"
 local p_cd="%B%F{blue}%~%f%b"
 local p_pr="%(!,#,$)"
 PROMPT="$p_uh: $p_cd
@@ -41,8 +41,9 @@ setopt nobeep
 setopt nolistbeep
 
 # Predict completion
-autoload predict-on
-predict-on
+#autoload predict-on
+#predict-on
+#predict-off
 
 # Color
 export LSCOLORS=ExFxCxdxBxegedabagacad
