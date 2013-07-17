@@ -32,12 +32,16 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'mattn/zencoding-vim'
 " QuickRun
 NeoBundle 'thinca/vim-quickrun'
-" Powerline
-NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 " Color scheme
 NeoBundle 'tomasr/molokai'
 " My bundle
 NeoBundle 'litesystems/dotvim'
+
+if has('python') || has('python3')
+    " Powerline
+    NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
+    set noshowmode
+endif
 
 " Brief help
 " :NeoBundleList          - list configured bundles
