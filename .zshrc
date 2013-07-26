@@ -12,6 +12,8 @@ export EDITOR=vim
 autoload -Uz compinit
 compinit
 
+local uname=`uname`
+
 # Prompt
 local p_uh="%F{green}%n@%m%f${WINDOW+[$WINDOW]}"
 local p_cd="%F{cyan}%~%f"
@@ -57,8 +59,11 @@ setopt nolistbeep
 # Color
 export LSCOLORS=ExFxCxdxBxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-alias ls="ls -G"
-alias gls="gls --color"
+if [ $uname = "Darwin" ]; then
+    alias ls="ls -G"
+elif [ $uname = "Linux" ]; then
+    alias ls="ls --color"
+fi
 zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
 
 setopt noautoremoveslash
@@ -183,7 +188,7 @@ alias -s py=python
 
 alias -s txt=cat
 
-if [ `uname` = "Darwin" ]; then
+if [ $uname = "Darwin" ]; then
     alias -s {png,jpg,bmp,PNG,JPG,BMP}='open -a Preview'
 else
     alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
