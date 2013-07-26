@@ -14,7 +14,7 @@ compinit
 
 # Prompt
 local p_uh="%F{green}%n@%m%f${WINDOW+[$WINDOW]}"
-local p_cd="%B%F{blue}%~%f%b"
+local p_cd="%F{cyan}%~%f"
 local p_pr="%(!,#,$)"
 PROMPT="$p_uh: $p_cd
 $p_pr "
