@@ -16,7 +16,16 @@ compinit
 local p_uh="%F{green}%n@%m%f${WINDOW+[$WINDOW]}"
 local p_cd="%F{cyan}%~%f"
 local p_pr="%(!,#,$)"
-PROMPT="$p_uh: $p_cd
+local p_rh=""
+
+if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
+    local rh=`who am i | sed 's/.*(\(.*\)).*/\1/'`
+    rh=${rh#localhost:}
+    rh=${rh%%.*}
+    p_rh=" %F{yellow}(${rh})%f"
+fi
+
+PROMPT="$p_uh$p_rh: $p_cd
 $p_pr "
 
 # History
