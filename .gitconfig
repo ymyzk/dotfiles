@@ -5,7 +5,8 @@
     ui = auto
 
 [core]
-    editor = /usr/bin/vim
+    editor  = vim
+    pager   = less -R
 
 [alias]
     br      = branch
