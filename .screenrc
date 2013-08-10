@@ -1,0 +1,19 @@
+defutf8 on
+defencoding utf8
+encoding utf-8 utf-8
+
+escape ^Ta
+defscrollback 10000
+altscreen on
+startup_message off
+autodetach on
+
+caption always '%?%F%{= bW}%:%{= Kk}%?%2n%f%07=%t%='
+hardstatus alwayslastline '%{= .w}%H%{-} %L=%-w%45L>%{=u b.}%n %t%{-}%+w %-36<%=%{= .w} %l | %{= .w}%Y/%m/%d %02c:%s'
+
+defbce on
+attrcolor b '.I'
+term xterm
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
