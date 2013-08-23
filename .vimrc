@@ -1,5 +1,7 @@
 set nocompatible
 
+set t_Co=256
+
 " NeoBundle
 filetype off
 if has('vim_starting')
@@ -29,7 +31,7 @@ NeoBundle 'Shougo/neocomplcache.vim'
 " Unite
 NeoBundle 'Shougo/unite.vim'
 " ZenCoding
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/emmet-vim'
 " QuickRun
 NeoBundle 'thinca/vim-quickrun'
 " Color scheme
