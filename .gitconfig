@@ -1,6 +1,9 @@
 [include]
     path = ~/.gitconfig.local
 
+[merge]
+    ff = false
+
 [color]
     ui = auto
 
