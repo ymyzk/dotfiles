@@ -20,6 +20,7 @@
     cod     = checkout develop
     com     = checkout master
     df      = diff
+    dfc     = diff --cached
     dfs     = diff -C --stat
     pl      = pull
     ps      = push
