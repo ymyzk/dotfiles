@@ -22,6 +22,7 @@
     df      = diff
     dfc     = diff --cached
     dfs     = diff -C --stat
+    gca     = gc --aggressive
     pl      = pull
     ps      = push
     pst     = push --tags
