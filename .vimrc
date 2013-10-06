@@ -34,6 +34,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'mattn/emmet-vim'
 " QuickRun
 NeoBundle 'thinca/vim-quickrun'
+" Vim-LaTeX
+NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " Color scheme
 NeoBundle 'tomasr/molokai'
 " My bundle
@@ -187,4 +189,23 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 "let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" Vim-LaTeX settings
+let OSTYPE = system('uname')
+if OSTYPE == "Darwin\n"
+    set shellslash
+    set grepprg=grep\ -nH\ $*
+    let g:tex_flavor='latex'
+    let g:Imap_UsePlaceHolders = 1
+    let g:Imap_DeleteEmptyPlaceHolders = 1
+    let g:Imap_StickyPlaceHolders = 0
+    let g:Tex_DefaultTargetFormat = 'pdf'
+    let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+    let g:Tex_FormatDependency_ps = 'dvi,ps'
+    let g:Tex_CompileRule_dvi = '/usr/texbin/platex -interaction=nonstopmode $*'
+    let g:Tex_CompileRule_pdf = '/usr/texbin/dvipdfmx $*.dvi'
+    let g:Tex_BibtexFlavor = '/usr/texbin/pbibtex'
+    let g:Tex_ViewRule_dvi = '/usr/bin/open -a Preview'
+    let g:Tex_ViewRule_pdf = '/usr/bin/open -a Preview'
+endif
 
