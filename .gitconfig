@@ -11,6 +11,9 @@
     editor  = vim
     pager   = less -R
 
+[push]
+    default = simple
+
 [alias]
     br      = branch
     cl      = clone
