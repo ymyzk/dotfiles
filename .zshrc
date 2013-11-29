@@ -2,24 +2,85 @@
 #
 # Copyright (c) 2012-2013, Yusuke Miyazaki. All rights reserved.
 
-# Language setting
+local uname=`uname`
+
+# 言語設定
+# 日本語 UTF-8
 export LANG=ja_JP.UTF-8
 
-# Editor setting
+# PATH
+# OS X のときは Homebrew のために PATH を変更
+if [ $uname = "Darwin" ]; then
+    PATH=/usr/local/bin:$PATH
+fi
+# Linux CUDA 用の PATH
+if [ -d "/usr/local/cuda/bin" ]; then
+    export PATH=/usr/local/cuda/bin:$PATH
+fi
+if [ -d "/usr/local/cuda/lib64" ]; then
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+fi
+
+# エディタ
 export EDITOR=vim
 
-# Auto complete
+# オートコンプリート
 autoload -Uz compinit
 compinit
 
-local uname=`uname`
+# cd コマンドなしでディレクトリを移動する
+setopt auto_cd
 
-# Prompt
+# ディレクトリスタックに自動で push する
+# cd -<TAB> でスタックのリストを確認できる
+setopt auto_pushd
+
+# コマンドのオードコレクション
+# オートコレクションを実行してほしくないときは
+# nocorrect <command> とする
+setopt correct
+
+# リストを詰めて表示
+setopt list_packed
+
+# ビープ音を鳴らさない
+setopt nobeep
+setopt nolistbeep
+
+# 末尾の / を自動的に削除しない
+setopt noautoremoveslash
+
+# Vi キーバインド
+bindkey -v
+
+# ls コマンドの色分け設定
+export LSCOLORS=ExFxCxdxBxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+if [ $uname = "Darwin" ]; then
+    alias ls="ls -G"
+elif [ $uname = "Linux" ]; then
+    alias ls="ls --color"
+fi
+zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+
+# 履歴
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt hist_ignore_dups # Igcore dupulication command History
+setopt share_history
+
+# プロンプト
+# user@host
 local p_uh="%F{green}%n@%m%f${WINDOW+[$WINDOW]}"
+# current directory
 local p_cd="%F{cyan}%~%f"
+# prefix (root-># user->$)
 local p_pr="%(!,#,$)"
+# remote host
 local p_rh=""
 
+# SSH 経由で接続しているときはリモートホストの情報を追加
 if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
     local rh=`who am i | sed 's/.*(\(.*\)).*/\1/'`
     rh=${rh#localhost:}
@@ -30,43 +91,33 @@ fi
 PROMPT="$p_uh$p_rh: $p_cd
 $p_pr "
 
-# History
-HISTFILE=~/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt hist_ignore_dups # Igcore dupulication command History
-setopt share_history
+# Suffix alias
+alias -s py=python
+alias -s txt=cat
 
-# Move current directory without cd command
-setopt auto_cd
-
-# Remember current directories
-# cd -<TAB>
-setopt auto_pushd
-
-# Auto correction
-setopt correct
-
-# No beep
-setopt nobeep
-setopt nolistbeep
-
-# Predict completion
-#autoload predict-on
-#predict-on
-#predict-off
-
-# Color
-export LSCOLORS=ExFxCxdxBxegedabagacad
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 if [ $uname = "Darwin" ]; then
-    alias ls="ls -G"
-elif [ $uname = "Linux" ]; then
-    alias ls="ls --color"
+    alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
+else
+    alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
 fi
-zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
 
-setopt noautoremoveslash
+# 各種圧縮ファイルの解凍
+function extract() {
+    case $1 in
+        *.tar.gz|*.tgz) tar xzvf $1;;
+        *.tar.xz) tar Jxvf $1;;
+        *.zip) unzip $1;;
+        *.lzh) lha e $1;;
+        *.tar.bz2|*.tbz) tar xjvf $1;;
+        *.tar.Z) tar zxvf $1;;
+        *.gz) gzip -dc $1;;
+        *.bz2) bzip2 -dc $1;;
+        *.Z) uncompress $1;;
+        *.tar) tar xvf $1;;
+        *.arj) unarj $1;;
+    esac
+}
+alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 
 # VCS
 RPROMPT=""
@@ -182,32 +233,3 @@ function _update_vcs_info_msg() {
 }
 
 add-zsh-hook precmd _update_vcs_info_msg
-
-# Suffix alias
-alias -s py=python
-
-alias -s txt=cat
-
-if [ $uname = "Darwin" ]; then
-    alias -s {png,jpg,bmp,PNG,JPG,BMP}='open -a Preview'
-else
-    alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
-fi
-
-function extract() {
-    case $1 in
-        *.tar.gz|*.tgz) tar xzvf $1;;
-        *.tar.xz) tar Jxvf $1;;
-        *.zip) unzip $1;;
-        *.lzh) lha e $1;;
-        *.tar.bz2|*.tbz) tar xjvf $1;;
-        *.tar.Z) tar zxvf $1;;
-        *.gz) gzip -dc $1;;
-        *.bz2) bzip2 -dc $1;;
-        *.Z) uncompress $1;;
-        *.tar) tar xvf $1;;
-        *.arj) unarj $1;;
-    esac
-}
-alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
-
