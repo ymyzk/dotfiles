@@ -13,6 +13,13 @@ export LANG=ja_JP.UTF-8
 if [ $uname = "Darwin" ]; then
     PATH=/usr/local/bin:$PATH
 fi
+# Linux CUDA 用の PATH
+if [ -d "/usr/local/cuda/bin" ]; then
+    export PATH=/usr/local/cuda/bin:$PATH
+fi
+if [ -d "/usr/local/cuda/lib64" ]; then
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+fi
 
 # エディタ
 export EDITOR=vim
