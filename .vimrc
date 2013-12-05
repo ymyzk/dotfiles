@@ -13,7 +13,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
-
+" vimproc
 NeoBundle 'Shougo/vimproc', {
             \ 'build': {
             \     'windows': 'make -f make_mingw32.mak',
@@ -44,6 +44,10 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
 NeoBundleLazy 'thinca/vim-quickrun', {
             \     'autoload': {'commands': ['QuickRun']}
             \  }
+" vim-ref
+NeoBundleLazy 'thinca/vim-ref', {
+            \     'autoload': {'commands': ['Ref']}
+            \  }
 " Unite
 NeoBundleLazy 'Shougo/unite.vim', {
             \     'autoload': {'commands': ['Unite']}
@@ -52,8 +56,8 @@ NeoBundleLazy 'Shougo/unite.vim', {
 NeoBundleLazy 'git://git.code.sf.net/p/vim-latex/vim-latex', {
             \     'autoload': {'filetypes': ['tex']}
             \  }
+" Powerline
 if has('python') || has('python3')
-    " Powerline
     NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
     set noshowmode
 endif
