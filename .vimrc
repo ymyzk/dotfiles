@@ -23,8 +23,6 @@ NeoBundle 'Shougo/vimproc', {
             \    },
             \ }
 
-" Auto completion
-NeoBundle 'Shougo/neocomplcache.vim'
 " ZenCoding
 NeoBundle 'mattn/emmet-vim'
 " Color scheme
@@ -56,6 +54,12 @@ NeoBundleLazy 'Shougo/unite.vim', {
 NeoBundleLazy 'git://git.code.sf.net/p/vim-latex/vim-latex', {
             \     'autoload': {'filetypes': ['tex']}
             \  }
+" Auto completion
+" neocomplcache
+NeoBundleLazy 'Shougo/neocomplcache.vim', {
+            \     'autoload': {'insert': 1}
+            \  }
+
 " Powerline
 if has('python') || has('python3')
     NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
@@ -131,7 +135,7 @@ set cursorline
 " Color scheme
 colorscheme molokai
 
-" Auto complete
+" neocomplcache
 " Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 let s:bundle = neobundle#get("neocomplcache.vim")
 function! s:bundle.hooks.on_source(bundle)
