@@ -1,6 +1,6 @@
 # .zshrc
 #
-# Copyright (c) 2012-2013, Yusuke Miyazaki. All rights reserved.
+# Copyright (c) 2012-2013, Yusuke Miyazaki.
 
 local uname=`uname`
 
@@ -67,7 +67,9 @@ zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'b
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-setopt hist_ignore_dups # Igcore dupulication command History
+# 重複する履歴を無視する
+setopt hist_ignore_dups
+# 履歴をシェル間で共有する
 setopt share_history
 
 # プロンプト
