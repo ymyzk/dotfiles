@@ -29,9 +29,28 @@ set mouse=a
 " キーコードはタイムアウトあり
 set notimeout ttimeout ttimeoutlen=200
 
+" エンコーディング設定
+" Vim 内部のエンコーディング
+set encoding=utf-8
+
+" スワップ設定
+" スワップファイルを作成
+set swapfile
+" スワップファイルの生成先を設定
+set directory=.,~/tmp,/var/tmp,/tmp
+
+" バックアップ設定
+" 上書きに失敗した場合のみバックアップをとる
+set nobackup
+set writebackup
+" バックアップファイルの保存先を設定
+set backupdir=.,~/tmp,~/
+
 " 検索設定
 " 検索結果のハイライト
 set hlsearch
+" インクリメンタルサーチ
+set incsearch
 " 小文字なら大文字を無視, 大文字なら大文字を無視せずに検索
 set smartcase
 " 大文字/小文字を無視して検索
@@ -51,8 +70,8 @@ set number
 set cursorline
 
 " インデント設定
-" 改行時の自動インデント
-set autoindent
+" 改行時の自動インデントとスマートインデントを有効化
+set autoindent smartindent
 " インデントの空白の数
 set shiftwidth=4
 " Tab による空白の数
