@@ -25,6 +25,10 @@ fi
 export EDITOR=vim
 
 # オートコンプリート
+# Homebrew の site-functions を追加
+if [ -d "/usr/local/share/zsh/site-functions" ]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
 autoload -Uz compinit
 compinit
 
