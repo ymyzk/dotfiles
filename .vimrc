@@ -86,6 +86,20 @@ set list
 " 不可視文字のフォーマット
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 
+" autocmd
+" ファイル全般に設定
+augroup general
+    autocmd!
+    " カーソル位置などを保存
+    autocmd BufWinLeave * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    autocmd BufWinEnter * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+    " ファイル保存時のみカーソル位置などを保存する場合は以下を用いる
+    "autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    "autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+    " バッファのオプションは保存しない
+    set viewoptions-=options
+augroup END
+
 " NeoBundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
