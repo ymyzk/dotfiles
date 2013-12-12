@@ -5,6 +5,68 @@ set nocompatible
 " colorscheme よりも前に書くこと
 set t_Co=256
 
+" シンタックスハイライトを有効化
+syntax on
+
+" 保存しなくてもファイルを切り替えられるようにする
+set hidden
+" コマンドラインモードでの補完
+set wildmenu
+" コマンドをステータスラインに表示
+set showcmd
+" Backspace キーの設定
+" autoindent, 行末, 挿入区間の始めで働かせる
+set backspace=indent,eol,start
+" ファイルを保存していないときに, ファイル保存を確認する
+set confirm
+" ビープ音の代わりに画面をフラッシュ
+set visualbell
+" 画面フラッシュもオフにする
+set t_vb=
+" すべてのモードでマウスを有効
+set mouse=a
+" マッピングはタイムアウトなし
+" キーコードはタイムアウトあり
+set notimeout ttimeout ttimeoutlen=200
+
+" 検索設定
+" 検索結果のハイライト
+set hlsearch
+" 小文字なら大文字を無視, 大文字なら大文字を無視せずに検索
+set smartcase
+" 大文字/小文字を無視して検索
+"set ignorecase
+
+" 表示設定
+" ステータスラインを常に表示
+set laststatus=2
+" コマンドラインの行数
+set cmdheight=1
+" カーソル位置を表示
+" Powerline では不要?
+set ruler
+" 行番号を表示
+set number
+" カーソル行の背景色を変える
+set cursorline
+
+" インデント設定
+" 改行時の自動インデント
+set autoindent
+" インデントの空白の数
+set shiftwidth=4
+" Tab による空白の数
+set softtabstop=4
+" Tab を空白にする
+" Tab を入力する際は Ctrl+V <Tab>
+set expandtab
+
+" 不可視文字設定
+" 不可視文字を表示
+set list
+" 不可視文字のフォーマット
+set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
+
 " NeoBundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -265,63 +327,8 @@ NeoBundleCheck
 " :NeoBundleInstall(!)    - install(update) bundles
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
-" シンタックスハイライトを有効化
-syntax on
-
-" 保存しなくてもファイルを切り替えられるようにする
-set hidden
-" コマンドラインモードでの補完
-set wildmenu
-" コマンドをステータスラインに表示
-set showcmd
-" 検索結果のハイライト
-set hlsearch
-" 大文字/小文字を無視して検索
-"set ignorecase
-" 小文字なら大文字を無視, 大文字なら大文字を無視せずに検索
-set smartcase
-" Backspace キーの設定
-" autoindent, 行末, 挿入区間の始めで働かせる
-set backspace=indent,eol,start
-" 改行時の自動インデント
-set autoindent
-" カーソル位置を表示
-" Powerline では不要?
-set ruler
-" ステータスラインを常に表示
-set laststatus=2
-" ファイルを保存していないときに, ファイル保存を確認する
-set confirm
-" ビープ音の代わりに画面をフラッシュ
-set visualbell
-" 画面フラッシュもオフにする
-set t_vb=
-" すべてのモードでマウスを有効
-set mouse=a
-" コマンドラインの行数
-set cmdheight=1
-" 行番号を表示
-set number
-" マッピンングはタイムアウトなし
-" キーコードはタイムアウトあり
-set notimeout ttimeout ttimeoutlen=200
-" インデントの空白の数
-set shiftwidth=4
-" Tab による空白の数
-set softtabstop=4
-" Tab を空白にする
-" Tab を入力する際は Ctrl+V <Tab>
-set expandtab
-" 不可視文字を表示
-set list
-" 不可視文字のフォーマット
-set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
-" カーソル業の背景色を変える
-set cursorline
-
 " Color scheme
 colorscheme molokai
-
 
 " QuickRun settings
 let s:bundle = neobundle#get("vim-quickrun")
