@@ -101,6 +101,9 @@ fi
 PROMPT="$p_uh$p_rh: $p_cd
 $p_pr "
 
+# Alias
+alias tmux="tmux -2"
+
 # Suffix alias
 alias -s py=python
 alias -s txt=cat
