@@ -90,8 +90,14 @@ set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 " ファイル全般に設定
 augroup general
     autocmd!
+    function! s:saveView()
+        " バッファがファイルでない場合と Git のコミットメッセージの場合は除外
+        if expand('%') != '' && &buftype !~ 'nofile' && !(bufname("%") =~ '\(COMMIT_EDITMSG\)')
+            mkview
+        endif
+    endfunction
     " カーソル位置などを保存
-    autocmd BufWinLeave * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    autocmd BufWinLeave * call s:saveView()
     autocmd BufWinEnter * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
     " ファイル保存時のみカーソル位置などを保存する場合は以下を用いる
     "autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
