@@ -32,6 +32,8 @@ set notimeout ttimeout ttimeoutlen=200
 " エンコーディング設定
 " Vim 内部のエンコーディング
 set encoding=utf-8
+" ファイルを開く際のエンコーディング
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
 
 " スワップ設定
 " スワップファイルを作成
