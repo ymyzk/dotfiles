@@ -1,6 +1,6 @@
 # .zshrc
 #
-# Copyright (c) 2012-2013, Yusuke Miyazaki.
+# Copyright (c) 2012-2014, Yusuke Miyazaki.
 
 local uname=`uname`
 
@@ -21,6 +21,14 @@ if [ -d "/usr/local/cuda/lib64" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 
+# オートコンプリート
+# Homebrew の site-functions を追加
+if [ -d "/usr/local/share/zsh/site-functions" ]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
+autoload -Uz compinit
+compinit
+
 # Node Version Manager
 if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
@@ -29,13 +37,10 @@ fi
 # エディタ
 export EDITOR=vim
 
-# オートコンプリート
-# Homebrew の site-functions を追加
-if [ -d "/usr/local/share/zsh/site-functions" ]; then
-    fpath=(/usr/local/share/zsh/site-functions $fpath)
-fi
-autoload -Uz compinit
-compinit
+# ls コマンドの色分け設定
+export LSCOLORS=ExFxCxdxBxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
 
 # cd コマンドなしでディレクトリを移動する
 setopt auto_cd
@@ -65,16 +70,6 @@ bindkey -v
 # 標準のキーバインドだと, 履歴を見る際にカーソルが先頭に移動する挙動を修正
 bindkey "^[[A" up-line-or-history
 bindkey "^[[B" down-line-or-history
-
-# ls コマンドの色分け設定
-export LSCOLORS=ExFxCxdxBxegedabagacad
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-if [ $uname = "Darwin" ]; then
-    alias ls="ls -G"
-elif [ $uname = "Linux" ]; then
-    alias ls="ls --color"
-fi
-zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
 
 # 履歴
 HISTFILE=~/.zsh_history
@@ -108,6 +103,17 @@ $p_pr "
 
 # Alias
 alias tmux="tmux -2"
+
+if [ $uname = "Darwin" ]; then
+    alias ls="ls -G"
+elif [ $uname = "Linux" ]; then
+    alias ls="ls --color"
+fi
+
+if [ -x "`which xsel 2>/dev/null`" ]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
 
 # Suffix alias
 alias -s py=python
