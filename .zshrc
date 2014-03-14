@@ -21,6 +21,11 @@ if [ -d "/usr/local/cuda/lib64" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 
+# Node Version Manager
+if [ -x "`which brew 2>/dev/null`" ]; then
+    source $(brew --prefix nvm)/nvm.sh
+fi
+
 # エディタ
 export EDITOR=vim
 
