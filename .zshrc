@@ -32,6 +32,7 @@ compinit
 # Node Version Manager
 if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
+    export NVM_DIR=~/.nvm
 fi
 
 # エディタ
