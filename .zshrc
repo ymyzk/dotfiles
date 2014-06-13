@@ -7,6 +7,8 @@ local uname=`uname`
 # 言語設定
 # 日本語 UTF-8
 export LANG=ja_JP.UTF-8
+export LANGUAGE=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
 # PATH
 # OS X のときは Homebrew のために PATH を変更
