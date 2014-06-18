@@ -7,6 +7,8 @@ local uname=`uname`
 # 言語設定
 # 日本語 UTF-8
 export LANG=ja_JP.UTF-8
+export LANGUAGE=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
 # PATH
 # OS X のときは Homebrew のために PATH を変更
@@ -74,12 +76,19 @@ bindkey "^[[B" down-line-or-history
 
 # 履歴
 HISTFILE=~/.zsh_history
-HISTSIZE=100000
+# Memory
+HISTSIZE=1000
+# File system
 SAVEHIST=100000
 # 重複する履歴を無視する
 setopt hist_ignore_dups
 # 履歴をシェル間で共有する
 setopt share_history
+# 余白を削除
+setopt hist_reduce_blanks
+# Incremental search
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
 
 # プロンプト
 # user@host
