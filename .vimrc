@@ -128,6 +128,8 @@ NeoBundle 'Shougo/vimproc', {
 
 " ZenCoding
 NeoBundle 'mattn/emmet-vim'
+" surround
+NeoBundle 'tpope/vim-surround'
 " Color scheme
 NeoBundle 'tomasr/molokai'
 " My bundle
