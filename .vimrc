@@ -159,6 +159,21 @@ NeoBundleLazy 'Shougo/unite.vim', {
 NeoBundleLazy 'git://git.code.sf.net/p/vim-latex/vim-latex', {
             \     'autoload': {'filetypes': ['tex']}
             \  }
+" neosnippet.vim
+NeoBundleLazy 'Shougo/neosnippet.vim', {
+            \     'autoload': {'insert': 1}
+            \  }
+" neosnippet-snippets
+NeoBundleLazy 'Shougo/neosnippet-snippets', {
+            \     'autoload': {'insert': 1}
+            \  }
+
+" Powerline
+if has('python') || has('python3')
+    NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
+    set noshowmode
+endif
+
 " Auto completion
 if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
     " neocomplete
@@ -352,12 +367,6 @@ else
     unlet s:bundle
 endif
 
-" Powerline
-if has('python') || has('python3')
-    NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
-    set noshowmode
-endif
-
 " ファイル形式別インデントとプラグインを有効化
 " NeoBundle で必要
 filetype indent plugin on
@@ -427,6 +436,28 @@ function! s:bundle.hooks.on_source(bundle)
         let g:Tex_BibtexFlavor = '/usr/bin/pbibtex'
         let g:Tex_ViewRule_dvi = '/usr/bin/gnome-open'
         let g:Tex_ViewRule_pdf = '/usr/bin/gnome-open'
+    endif
+endfunction
+unlet s:bundle
+
+let s:bundle = neobundle#get("neosnippet.vim")
+function! s:bundle.hooks.on_source(bundle)
+    " Plugin key-mappings.
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+    " SuperTab like snippets behavior.
+    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+                \ "\<Plug>(neosnippet_expand_or_jump)"
+                \: pumvisible() ? "\<C-n>" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+                \ "\<Plug>(neosnippet_expand_or_jump)"
+                \: "\<TAB>"
+
+    " For snippet_complete marker.
+    if has('conceal')
+        set conceallevel=2 concealcursor=i
     endif
 endfunction
 unlet s:bundle
