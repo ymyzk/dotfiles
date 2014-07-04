@@ -106,6 +106,8 @@ augroup general
     "autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
     " バッファのオプションは保存しない
     set viewoptions-=options
+    " .nasm の Syntax highlight を設定
+    autocmd BufRead,BufNewFile *.nasm set filetype=nasm
 augroup END
 
 " NeoBundle
