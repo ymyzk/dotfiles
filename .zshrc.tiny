@@ -4,18 +4,20 @@
 
 local uname=`uname`
 
-# 言語設定
-# 日本語 UTF-8
+# ----- Environment variables -----
+
+# Language
+# Japanese / JAPAN / UTF-8
 export LANG=ja_JP.UTF-8
 export LANGUAGE=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
 # PATH
-# OS X のときは Homebrew のために PATH を変更
+# Homebrew
 if [ $uname = "Darwin" ]; then
-    PATH=/usr/local/bin:$PATH
+    export PATH=/usr/local/bin:$PATH
 fi
-# Linux CUDA 用の PATH
+# Linux CUDA
 if [ -d "/usr/local/cuda/bin" ]; then
     export PATH=/usr/local/cuda/bin:$PATH
 fi
@@ -23,26 +25,31 @@ if [ -d "/usr/local/cuda/lib64" ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 
-# オートコンプリート
-# Homebrew の site-functions を追加
-if [ -d "/usr/local/share/zsh/site-functions" ]; then
-    fpath=(/usr/local/share/zsh/site-functions $fpath)
-fi
-autoload -Uz compinit
-compinit
-
 # Node Version Manager
 if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
     export NVM_DIR=~/.nvm
 fi
 
-# エディタ
+# Auto completion
+# Homebrew の site-functions を追加
+if [ -d "/usr/local/share/zsh/site-functions" ]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
+
+# Editor
 export EDITOR=vim
 
 # ls コマンドの色分け設定
 export LSCOLORS=ExFxCxdxBxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+# ----- / Environment variables -----
+
+# Remove path duplications
+typeset -U path cdpath fpath manpath
+
+# ls コマンドの色分け設定
 zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
 
 # cd コマンドなしでディレクトリを移動する
@@ -52,7 +59,11 @@ setopt auto_cd
 # cd -<TAB> でスタックのリストを確認できる
 setopt auto_pushd
 
-# コマンドのオードコレクション
+# Auto completion
+autoload -Uz compinit
+compinit
+
+# コマンドのオートコレクション
 # オートコレクションを実行してほしくないときは
 # nocorrect <command> とする
 setopt correct
@@ -111,27 +122,28 @@ fi
 PROMPT="$p_uh$p_rh: $p_cd
 $p_pr "
 
-# Alias
+# ----- Alias -----
+
 alias tmux="tmux -2"
 
-if [ $uname = "Darwin" ]; then
-    alias ls="ls -G"
-elif [ $uname = "Linux" ]; then
-    alias ls="ls --color"
-fi
-
-if [ -x "`which xsel 2>/dev/null`" ]; then
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-fi
-
-# Suffix alias
 alias -s py=python
 alias -s txt=cat
 
 if [ $uname = "Darwin" ]; then
+    alias ls="ls -G"
+
     alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
-else
+elif [ $uname = "Linux" ]; then
+    alias ls="ls --color"
+
+    if [ -x "`which gnome-open 2>/dev/null`" ]; then
+        alias open='gnome-open'
+    fi
+    if [ -x "`which xsel 2>/dev/null`" ]; then
+        alias pbcopy='xsel --clipboard --input'
+        alias pbpaste='xsel --clipboard --output'
+    fi
+
     alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
 fi
 
@@ -152,6 +164,8 @@ function extract() {
     esac
 }
 alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
+
+# ----- / Alias -----
 
 # pip zsh completion start
 function _pip_completion {
