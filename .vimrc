@@ -108,6 +108,8 @@ augroup general
     set viewoptions-=options
     " .nasm の Syntax highlight を設定
     autocmd BufRead,BufNewFile *.nasm set filetype=nasm
+    " .tc の Syntax highlight を設定
+    autocmd BufRead,BufNewFile *.tc set filetype=c
 augroup END
 
 " NeoBundle
