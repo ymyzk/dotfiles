@@ -188,8 +188,7 @@ autoload -Uz is-at-least
 
 zstyle ':vcs_info:*' max-exports 3
 
-zstyle ':vcs_info:*' enable git
-#zstyle ':vcs_info:*' enable git svn hg bzr
+zstyle ':vcs_info:*' enable git svn hg bzr
 
 # For non Git VCS
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
