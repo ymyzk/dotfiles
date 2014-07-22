@@ -4,6 +4,9 @@
 [merge]
     ff = false
 
+[pull]
+    rebase = true
+
 [color]
     ui = auto
 
