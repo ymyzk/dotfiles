@@ -131,6 +131,7 @@ alias -s txt=cat
 
 if [ $uname = "Darwin" ]; then
     alias ls="ls -G"
+    alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
     alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
 elif [ $uname = "Linux" ]; then
