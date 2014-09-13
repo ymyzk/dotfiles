@@ -31,6 +31,10 @@ if [ -x "`which brew 2>/dev/null`" ]; then
     export NVM_DIR=~/.nvm
 fi
 
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
 # Auto completion
 # Homebrew の site-functions を追加
 if [ -d "/usr/local/share/zsh/site-functions" ]; then
