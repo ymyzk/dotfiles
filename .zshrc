@@ -35,6 +35,9 @@ fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/yusuke/Development/google-cloud-sdk/path.zsh.inc'
+
 # Auto completion
 # Homebrew の site-functions を追加
 if [ -d "/usr/local/share/zsh/site-functions" ]; then
@@ -130,7 +133,6 @@ $p_pr "
 
 alias tmux="tmux -2"
 
-alias -s py=python
 alias -s txt=cat
 
 if [ $uname = "Darwin" ]; then
@@ -238,6 +240,9 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
+# The next line enables bash completion for gcloud.
+source '/Users/yusuke/Development/google-cloud-sdk/completion.zsh.inc'
 
 # VCS
 RPROMPT=""
