@@ -30,6 +30,9 @@ if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
     export NVM_DIR=~/.nvm
 fi
+if [ $uname = 'Linux' -a -e "${HOME}/.nvm/nvm.sh" ]; then
+    source ~/.nvm/nvm.sh
+fi
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
