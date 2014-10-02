@@ -36,7 +36,9 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/yusuke/Development/google-cloud-sdk/path.zsh.inc'
+if [ -e "~/Development/google-cloud-sdk/path.zsh.inc" ]; then
+    source '~/Development/google-cloud-sdk/path.zsh.inc'
+fi
 
 # Auto completion
 # Homebrew の site-functions を追加
@@ -242,7 +244,9 @@ fi
 ###-end-npm-completion-###
 
 # The next line enables bash completion for gcloud.
-source '/Users/yusuke/Development/google-cloud-sdk/completion.zsh.inc'
+if [ -e "~/Development/google-cloud-sdk/completion.zsh.inc" ]; then
+    source '~/Development/google-cloud-sdk/completion.zsh.inc'
+fi
 
 # VCS
 RPROMPT=""
