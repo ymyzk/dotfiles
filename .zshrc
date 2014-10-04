@@ -14,22 +14,24 @@ export LC_ALL=ja_JP.UTF-8
 
 # PATH
 # Homebrew
-if [ $uname = "Darwin" ]; then
+if [ $uname = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
 fi
 # Linux CUDA
-if [ -d "/usr/local/cuda/bin" ]; then
+if [ -d '/usr/local/cuda/bin' ]; then
     export PATH=/usr/local/cuda/bin:$PATH
 fi
-if [ -d "/usr/local/cuda/lib64" ]; then
+if [ -d '/usr/local/cuda/lib64' ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 
 # Node Version Manager
+# OS X (Homebrew)
 if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
     export NVM_DIR=~/.nvm
 fi
+# Linux
 if [ $uname = 'Linux' -a -e "${HOME}/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh
 fi
@@ -38,7 +40,7 @@ fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# The next line updates PATH for the Google Cloud SDK.
+# Google Cloud SDK.
 if [ -e "~/Development/google-cloud-sdk/path.zsh.inc" ]; then
     source '~/Development/google-cloud-sdk/path.zsh.inc'
 fi
