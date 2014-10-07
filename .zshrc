@@ -41,13 +41,13 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Google Cloud SDK.
-if [ -e "~/Development/google-cloud-sdk/path.zsh.inc" ]; then
+if [ -e '~/Development/google-cloud-sdk/path.zsh.inc' ]; then
     source '~/Development/google-cloud-sdk/path.zsh.inc'
 fi
 
 # Auto completion
 # Homebrew の site-functions を追加
-if [ -d "/usr/local/share/zsh/site-functions" ]; then
+if [ -d '/usr/local/share/zsh/site-functions' ]; then
     fpath=(/usr/local/share/zsh/site-functions $fpath)
 fi
 
@@ -96,8 +96,8 @@ setopt noautoremoveslash
 bindkey -v
 
 # 標準のキーバインドだと, 履歴を見る際にカーソルが先頭に移動する挙動を修正
-bindkey "^[[A" up-line-or-history
-bindkey "^[[B" down-line-or-history
+bindkey '^[[A' up-line-or-history
+bindkey '^[[B' down-line-or-history
 
 # 履歴
 HISTFILE=~/.zsh_history
@@ -112,8 +112,8 @@ setopt share_history
 # 余白を削除
 setopt hist_reduce_blanks
 # Incremental search
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
 
 # プロンプト
 # user@host
@@ -123,7 +123,7 @@ local p_cd="%F{cyan}%~%f"
 # prefix (root-># user->$)
 local p_pr="%(!,#,$)"
 # remote host
-local p_rh=""
+local p_rh=''
 
 # SSH 経由で接続しているときはリモートホストの情報を追加
 if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
@@ -138,17 +138,16 @@ $p_pr "
 
 # ----- Alias -----
 
-alias tmux="tmux -2"
+alias tmux='tmux -2'
 
 alias -s txt=cat
 
-if [ $uname = "Darwin" ]; then
-    alias ls="ls -G"
+if [ $uname = 'Darwin' ]; then
+    alias ls='ls -G'
     alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
     # alias brew="env PATH=${PATH/:$HOME\/\.pyenv\/shims/} brew"
-
     alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
-elif [ $uname = "Linux" ]; then
+elif [ $uname = 'Linux' ]; then
     alias ls="ls --color"
 
     if [ -x "`which gnome-open 2>/dev/null`" ]; then
