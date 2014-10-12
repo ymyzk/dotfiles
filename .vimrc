@@ -147,6 +147,10 @@ NeoBundleLazy 'othree/html5.vim', {
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
             \     'autoload': {'filetypes': ['css']}
             \  }
+" Coq syntax
+NeoBundleLazy 'jvoorhis/coq.vim', {
+            \     'autoload': {'filetypes': ['coq']}
+            \  }
 " QuickRun
 NeoBundleLazy 'thinca/vim-quickrun', {
             \     'autoload': {'commands': ['QuickRun']}
