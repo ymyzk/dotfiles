@@ -248,12 +248,12 @@ fi
 ###-end-npm-completion-###
 
 # The next line enables bash completion for gcloud.
-if [ -e "~/Development/google-cloud-sdk/completion.zsh.inc" ]; then
+if [ -e '~/Development/google-cloud-sdk/completion.zsh.inc' ]; then
     source '~/Development/google-cloud-sdk/completion.zsh.inc'
 fi
 
 # VCS
-RPROMPT=""
+RPROMPT=''
 
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
