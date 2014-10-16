@@ -137,7 +137,7 @@ NeoBundle 'tpope/vim-surround'
 " Color scheme
 NeoBundle 'tomasr/molokai'
 " My bundle
-NeoBundle 'litesystems/dotvim'
+NeoBundle 'ymyzk/dotvim'
 
 " HTML5 ominicomplete & syntax
 NeoBundleLazy 'othree/html5.vim', {
