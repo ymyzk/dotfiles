@@ -14,18 +14,19 @@ export LC_ALL=ja_JP.UTF-8
 
 # PATH
 # Homebrew
-if [ $uname = "Darwin" ]; then
+if [ $uname = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
 fi
 # Linux CUDA
-if [ -d "/usr/local/cuda/bin" ]; then
+if [ -d '/usr/local/cuda/bin' ]; then
     export PATH=/usr/local/cuda/bin:$PATH
 fi
-if [ -d "/usr/local/cuda/lib64" ]; then
+if [ -d '/usr/local/cuda/lib64' ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 
 # Node Version Manager
+# OS X (Homebrew)
 if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
     export NVM_DIR=~/.nvm
