@@ -31,14 +31,23 @@ if [ -x "`which brew 2>/dev/null`" ]; then
     source $(brew --prefix nvm)/nvm.sh
     export NVM_DIR=~/.nvm
 fi
+# Linux
+if [ $uname = 'Linux' -a -e "${HOME}/.nvm/nvm.sh" ]; then
+    source ~/.nvm/nvm.sh
+fi
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
+# Google Cloud SDK.
+if [ -e '~/Development/google-cloud-sdk/path.zsh.inc' ]; then
+    source '~/Development/google-cloud-sdk/path.zsh.inc'
+fi
+
 # Auto completion
 # Homebrew の site-functions を追加
-if [ -d "/usr/local/share/zsh/site-functions" ]; then
+if [ -d '/usr/local/share/zsh/site-functions' ]; then
     fpath=(/usr/local/share/zsh/site-functions $fpath)
 fi
 
