@@ -96,8 +96,8 @@ setopt noautoremoveslash
 bindkey -v
 
 # 標準のキーバインドだと, 履歴を見る際にカーソルが先頭に移動する挙動を修正
-bindkey "^[[A" up-line-or-history
-bindkey "^[[B" down-line-or-history
+bindkey '^[[A' up-line-or-history
+bindkey '^[[B' down-line-or-history
 
 # 履歴
 HISTFILE=~/.zsh_history
@@ -112,8 +112,8 @@ setopt share_history
 # 余白を削除
 setopt hist_reduce_blanks
 # Incremental search
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
 
 # プロンプト
 # user@host
@@ -123,7 +123,7 @@ local p_cd="%F{cyan}%~%f"
 # prefix (root-># user->$)
 local p_pr="%(!,#,$)"
 # remote host
-local p_rh=""
+local p_rh=''
 
 # SSH 経由で接続しているときはリモートホストの情報を追加
 if [[ -n "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
