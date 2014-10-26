@@ -151,8 +151,8 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
 NeoBundleLazy 'jvoorhis/coq.vim', {
             \     'autoload': {'filetypes': ['coq']}
             \  }
-" Coq IDE
-NeoBundleLazy 'eagletmt/coqtop-vim', {
+" coqtop
+NeoBundleLazy 'ymyzk/coqtop-vim', {
             \     'autoload': {'filetypes': ['coq']}
             \  }
 " QuickRun
