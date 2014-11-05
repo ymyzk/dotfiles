@@ -113,10 +113,12 @@ augroup general
 augroup END
 
 " NeoBundle
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -378,6 +380,8 @@ else
     endfunction
     unlet s:bundle
 endif
+
+call neobundle#end()
 
 " ファイル形式別インデントとプラグインを有効化
 " NeoBundle で必要
