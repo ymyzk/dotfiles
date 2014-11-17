@@ -37,8 +37,12 @@ if [ $uname = 'Linux' -a -e "${HOME}/.nvm/nvm.sh" ]; then
 fi
 
 # pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if [ -x "`which pyenv 2>/dev/null`" ]; then
+    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+fi
+if [ -x "`which pyenv-virtualenv-init 2>/dev/null`" ]; then
+    if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+fi
 
 # Google Cloud SDK.
 if [ -e '~/Development/google-cloud-sdk/path.zsh.inc' ]; then
