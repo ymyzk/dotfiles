@@ -18,10 +18,10 @@ if [ $uname = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
 fi
 # Linux CUDA
-if [ -d '/usr/local/cuda/bin' ]; then
+if [ -d /usr/local/cuda/bin ]; then
     export PATH=/usr/local/cuda/bin:$PATH
 fi
-if [ -d '/usr/local/cuda/lib64' ]; then
+if [ -d /usr/local/cuda/lib64 ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 # Go
@@ -48,7 +48,7 @@ if [ -x "`which pyenv-virtualenv-init 2>/dev/null`" ]; then
     if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 fi
 
-# Google Cloud SDK.
+# Google Cloud SDK
 if [ -e '~/Development/google-cloud-sdk/path.zsh.inc' ]; then
     source '~/Development/google-cloud-sdk/path.zsh.inc'
 fi
