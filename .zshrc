@@ -49,13 +49,13 @@ if [ -x "`which pyenv-virtualenv-init 2>/dev/null`" ]; then
 fi
 
 # Google Cloud SDK
-if [ -e '~/Development/google-cloud-sdk/path.zsh.inc' ]; then
-    source '~/Development/google-cloud-sdk/path.zsh.inc'
+if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
+    source ~/Development/google-cloud-sdk/path.zsh.inc
 fi
 
 # Auto completion
 # Homebrew の site-functions を追加
-if [ -d '/usr/local/share/zsh/site-functions' ]; then
+if [ -d /usr/local/share/zsh/site-functions ]; then
     fpath=(/usr/local/share/zsh/site-functions $fpath)
 fi
 
