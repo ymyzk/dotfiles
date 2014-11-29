@@ -42,15 +42,22 @@ fi
 
 # pyenv
 if [ -x "`which pyenv 2>/dev/null`" ]; then
-    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+    eval "$(pyenv init -)"
+    # For tmux
+    export PATH=$HOME/.pyenv/shims:$PATH
 fi
 if [ -x "`which pyenv-virtualenv-init 2>/dev/null`" ]; then
-    if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 # Google Cloud SDK
 if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
     source ~/Development/google-cloud-sdk/path.zsh.inc
+fi
+
+# OPAM configuration
+if [ -e ~/.opam/opam-init/init.zsh ]; then
+    . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
 # Auto completion
