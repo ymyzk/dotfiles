@@ -17,7 +17,7 @@
 [alias]
     br      = branch
     cl      = clone
-    cm      = commit
+    cm      = commit -v
     co      = checkout
     cob     = checkout -b
     cod     = checkout develop
