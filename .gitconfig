@@ -15,6 +15,7 @@
     pager   = less -R
 
 [alias]
+    a       = add
     br      = branch
     cl      = clone
     cm      = commit -v
