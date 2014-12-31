@@ -4,3 +4,4 @@
 .vim/bundle/*
 .vim/view/*
 !.vim/bundle/neobundle.vim
+.zsh/.zcompdump
