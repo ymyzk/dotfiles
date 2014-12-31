@@ -46,10 +46,7 @@ fi
 
 # Hooks
 if is-at-least 4.3.11; then
-    zstyle ':vcs_info:git+set-message:*' hooks \
-                                            git-hook-begin \
-                                            git-untracked \
-                                            git-nomerge-branch
+    zstyle ':vcs_info:git+set-message:*' hooks git-hook-begin git-untracked git-nomerge-branch
 
     function +vi-git-hook-begin() {
         if [[ $(command git rev-parse --is-inside-work-tree 2> /dev/null) != 'true' ]]; then
