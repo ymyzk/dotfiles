@@ -181,7 +181,13 @@ NeoBundleLazy 'Shougo/neosnippet.vim', {
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
             \     'autoload': {'insert': 1}
             \  }
-
+" CoffeeScript
+if v:version >= 704
+    au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+    NeoBundleLazy 'kchmck/vim-coffee-script', {
+                \     'autoload': {'filetypes': ['coffee']}
+                \  }
+endif
 " Powerline
 if has('python') || has('python3')
     NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
