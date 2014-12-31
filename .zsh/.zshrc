@@ -155,6 +155,7 @@ $p_pr "
 
 alias tmux='tmux -2'
 
+alias -s js=node
 alias -s py=python
 alias -s txt=cat
 
