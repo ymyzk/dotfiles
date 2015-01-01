@@ -128,8 +128,8 @@ setopt share_history
 setopt hist_reduce_blanks
 # Incremental search
 bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
 
 . $ZDOTDIR/aliases.zsh
 . $ZDOTDIR/completion.zsh
 . $ZDOTDIR/prompt.zsh
+. $ZDOTDIR/peco.zsh
