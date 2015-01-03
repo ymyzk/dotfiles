@@ -114,7 +114,6 @@ bindkey -v
 bindkey '^[[A' up-line-or-history
 bindkey '^[[B' down-line-or-history
 
-# 履歴
 HISTFILE=~/.zsh_history
 # Memory
 HISTSIZE=3000
