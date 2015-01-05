@@ -1,11 +1,9 @@
-" Vi 互換モードをオフ
 set nocompatible
 
 " 256色モード
 " colorscheme よりも前に書くこと
 set t_Co=256
 
-" シンタックスハイライトを有効化
 syntax on
 
 " 保存しなくてもファイルを切り替えられるようにする
