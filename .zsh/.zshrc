@@ -30,7 +30,7 @@ fi
 
 # Node Version Manager
 # OS X (Homebrew)
-if [ -e $(brew --prefix nvm)/nvm.sh ]; then
+if [ $uname = 'Darwin' -a -e $(brew --prefix nvm)/nvm.sh ]; then
     export NVM_DIR=~/.nvm
     source $(brew --prefix nvm)/nvm.sh
 fi
