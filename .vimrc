@@ -186,11 +186,8 @@ if v:version >= 704
                 \     'autoload': {'filetypes': ['coffee']}
                 \  }
 endif
-" Powerline
-if has('python') || has('python3')
-    NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
-    set noshowmode
-endif
+" lightline
+NeoBundle 'itchyny/lightline.vim'
 
 " Auto completion
 if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
