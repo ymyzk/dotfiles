@@ -1,12 +1,11 @@
 # .zshrc
 #
-# Copyright (c) 2012-2014, Yusuke Miyazaki.
+# Copyright (c) 2012-2015, Yusuke Miyazaki.
 
 local uname=`uname`
 
 # ----- Environment variables -----
 
-# Language
 # Japanese / JAPAN / UTF-8
 export LANG=ja_JP.UTF-8
 export LANGUAGE=ja_JP.UTF-8
