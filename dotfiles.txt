@@ -1,0 +1,12 @@
+.gitconfig
+.screenrc
+.tmux.conf
+.vim
+.vimrc
+.zsh/.zshrc
+.zsh/aliases.zsh
+.zsh/completion.zsh
+.zsh/history.zsh
+.zsh/peco.zsh
+.zsh/prompt.zsh
+.zshenv
