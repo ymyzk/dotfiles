@@ -113,21 +113,19 @@ bindkey -v
 bindkey '^[[A' up-line-or-history
 bindkey '^[[B' down-line-or-history
 
-HISTFILE=~/.zsh_history
-# Memory
-HISTSIZE=3000
-# File system
-SAVEHIST=100000
-# 重複する履歴を無視する
-setopt hist_ignore_dups
-# 履歴をシェル間で共有する
-setopt share_history
-# 余白を削除
-setopt hist_reduce_blanks
-# Incremental search
+# Incremental history search
 bindkey '^R' history-incremental-search-backward
 
-. $ZDOTDIR/aliases.zsh
-. $ZDOTDIR/completion.zsh
-. $ZDOTDIR/prompt.zsh
-. $ZDOTDIR/peco.zsh
+function load_library() {
+    local lib
+    lib=$1
+    if [ -f $lib ]; then
+        . $lib
+    fi
+}
+
+load_library $ZDOTDIR/aliases.zsh
+load_library $ZDOTDIR/completion.zsh
+load_library $ZDOTDIR/history.zsh
+load_library $ZDOTDIR/prompt.zsh
+load_library $ZDOTDIR/peco.zsh
