@@ -2,6 +2,9 @@
 #
 # Copyright (c) 2012-2015, Yusuke Miyazaki.
 
+# Profiling
+#zmodload zsh/zprof && zprof
+
 local uname=`uname`
 
 # ----- Environment variables -----
@@ -129,3 +132,8 @@ load_library $ZDOTDIR/completion.zsh
 load_library $ZDOTDIR/history.zsh
 load_library $ZDOTDIR/prompt.zsh
 load_library $ZDOTDIR/peco.zsh
+
+# Profiling
+#if (which zprof > /dev/null) ;then
+#  zprof | less
+#fi
