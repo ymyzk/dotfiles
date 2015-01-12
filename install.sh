@@ -74,6 +74,11 @@ link_file () {
   fi
 
   if [ "$skip" != "true" ]; then
+    local parent_dir=`dirname "$2"`
+    if [ ! -d $parent_dir ]; then
+      mkdir -p $parent_dir
+      success "created $parent_dir"
+    fi
     ln -s "$1" "$2"
     success "linked $1 to $2"
   fi
@@ -82,7 +87,7 @@ link_file () {
 install_dotfiles () {
   local listfile=$1
   if [ ! -f "$listfile" ]; then
-    fail "No such file or directory: $listfile"
+    fail "No such file: $listfile"
   fi
 
   info 'Installing dotfiles'
