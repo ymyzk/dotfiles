@@ -8,15 +8,17 @@ if [ $uname = 'Darwin' ]; then
     alias ls='ls -G'
     alias brew="env PATH=${PATH/:$HOME\/\.pyenv\/shims/} brew"
 
+    # Browsers
     alias canary='open -a Google\ Chrome\ Canary'
     alias chrome='open -a Google\ Chrome'
     alias firefox='open -a Firefox'
     alias safari='open -a Safari'
 
+    # OS X
+    alias ios-simulator='open $(xcode-select -p)/Applications/iOS\ Simulator.app'
     alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
     alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
-
 elif [ $uname = 'Linux' ]; then
     alias ls='ls --color'
 
