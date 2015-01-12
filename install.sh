@@ -64,7 +64,7 @@ link_file () {
     fi
 
     if [ "$backup" == "true" ]; then
-      mv "$dst" "${dst}.backup"
+      mv "$dst" "${dst}.bak"
       success "moved $dst to ${dst}.bak"
     fi
 
@@ -80,11 +80,16 @@ link_file () {
 }
 
 install_dotfiles () {
+  local listfile=$1
+  if [ ! -f "$listfile" ]; then
+    fail "No such file or directory: $listfile"
+  fi
+
   info 'Installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
   local src dst
-  local dotfiles=(`cat $DOTFILES_SRC/dotfiles.txt`)
+  local dotfiles=(`cat $listfile`)
   for dotfile in ${dotfiles[@]}; do
     src="$DOTFILES_SRC/$dotfile"
     dst="$DOTFILES_DST/$dotfile"
@@ -92,4 +97,9 @@ install_dotfiles () {
   done
 }
 
-install_dotfiles
+if [ $# -ne 1 ]; then
+  echo "usage: $0 dotfiles.txt" 1>&2
+  exit 1
+fi
+
+install_dotfiles $1
