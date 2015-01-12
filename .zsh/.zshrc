@@ -35,11 +35,21 @@ fi
 # OS X (Homebrew)
 if [ $uname = 'Darwin' ] && [ $(brew --prefix nvm)/nvm.sh ]; then
     export NVM_DIR=~/.nvm
-    source $(brew --prefix nvm)/nvm.sh
+    # Lazy
+    nvm() {
+        unset -f nvm
+        source $(brew --prefix nvm)/nvm.sh
+        nvm "$@"
+    }
 fi
 # Linux
 if [ $uname = 'Linux' ] && [ -e "${HOME}/.nvm/nvm.sh" ]; then
-    source ~/.nvm/nvm.sh
+    # Lazy
+    nvm() {
+        unset -f nvm
+        source ~/.nvm/nvm.sh
+        nvm "$@"
+    }
 fi
 
 # pyenv
