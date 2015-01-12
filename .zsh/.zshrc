@@ -133,6 +133,7 @@ load_library $ZDOTDIR/aliases.zsh
 load_library $ZDOTDIR/completion.zsh
 load_library $ZDOTDIR/history.zsh
 load_library $ZDOTDIR/prompt.zsh
+load_library $ZDOTDIR/rprompt.zsh
 load_library $ZDOTDIR/peco.zsh
 
 # Profiling
