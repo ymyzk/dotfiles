@@ -1,7 +1,15 @@
 .gitconfig
 .screenrc
 .tmux.conf
-.vim
+.vim/after/ftplugin
+.vim/bundle
+.vim/config/20-neobundle_start.vim
+.vim/config/21-plugins.vim
+.vim/config/25-latex.vim
+.vim/config/28-completion.vim
+.vim/config/29-snippet.vim
+.vim/config/30-neobundle_end.vim
+.vim/config/40-filetypes.vim
 .vimrc
 .zsh/.zshrc
 .zsh/aliases.zsh
@@ -9,4 +17,5 @@
 .zsh/history.zsh
 .zsh/peco.zsh
 .zsh/prompt.zsh
+.zsh/rprompt.zsh
 .zshenv
