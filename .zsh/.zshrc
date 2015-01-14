@@ -121,6 +121,10 @@ bindkey '^[[B' down-line-or-history
 # Incremental history search
 bindkey '^R' history-incremental-search-backward
 
+function command_exists() {
+    command -v "$1" &> /dev/null
+}
+
 function load_library() {
     local lib
     lib=$1
@@ -135,6 +139,7 @@ load_library $ZDOTDIR/history.zsh
 load_library $ZDOTDIR/prompt.zsh
 load_library $ZDOTDIR/rprompt.zsh
 load_library $ZDOTDIR/peco.zsh
+load_library $ZDOTDIR/tmux.zsh
 
 # Profiling
 #if (which zprof > /dev/null) ;then
