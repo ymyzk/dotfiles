@@ -17,4 +17,5 @@
 .zsh/peco.zsh
 .zsh/prompt.zsh
 .zsh/rprompt.zsh
+.zsh/tmux.zsh
 .zshenv

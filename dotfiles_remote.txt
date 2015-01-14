@@ -10,4 +10,5 @@
 .zsh/history.zsh
 .zsh/peco.zsh
 .zsh/prompt.zsh
+.zsh/tmux.zsh
 .zshenv
