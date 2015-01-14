@@ -16,6 +16,7 @@
 
 [alias]
     a       = add
+    ap      = add -p
     br      = branch
     cl      = clone
     cm      = commit -v
