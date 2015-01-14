@@ -1,7 +1,7 @@
-if [ -x "`which peco 2>/dev/null`" ]; then
+if command_exists peco; then
     function peco-select-history() {
         local tac
-        if which tac > /dev/null; then
+        if command_exists tac; then
             tac="tac"
         else
             tac="tail -r"

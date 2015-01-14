@@ -22,10 +22,10 @@ if [ $uname = 'Darwin' ]; then
 elif [ $uname = 'Linux' ]; then
     alias ls='ls --color'
 
-    if [ -x "`which gnome-open 2>/dev/null`" ]; then
+    if command_exists gnome-open; then
         alias open='gnome-open'
     fi
-    if [ -x "`which xsel 2>/dev/null`" ]; then
+    if command_exists xsel; then
         alias pbcopy='xsel --clipboard --input'
         alias pbpaste='xsel --clipboard --output'
     fi

@@ -5,7 +5,15 @@
 # Profiling
 #zmodload zsh/zprof && zprof
 
+# ----- Helper -----
+
 local uname=`uname`
+
+function command_exists() {
+    command -v "$1" &> /dev/null
+}
+
+# ----- / Helper -----
 
 # ----- Environment variables -----
 
@@ -48,12 +56,12 @@ if [ $uname = 'Linux' ] && [ -e "${HOME}/.nvm/nvm.sh" ]; then
 fi
 
 # pyenv
-if [ -x "`which pyenv 2>/dev/null`" ]; then
+if command_exists pyenv; then
     eval "$(pyenv init -)"
     # For tmux
     export PATH=$HOME/.pyenv/shims:$PATH
 fi
-if [ -x "`which pyenv-virtualenv-init 2>/dev/null`" ]; then
+if command_exists pyenv-virtualenv-init; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
@@ -120,10 +128,6 @@ bindkey '^[[B' down-line-or-history
 
 # Incremental history search
 bindkey '^R' history-incremental-search-backward
-
-function command_exists() {
-    command -v "$1" &> /dev/null
-}
 
 function load_library() {
     local lib
