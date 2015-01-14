@@ -15,26 +15,12 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 " Color scheme
 NeoBundle 'tomasr/molokai'
+" lightline
+NeoBundle 'itchyny/lightline.vim'
 
-" HTML5 ominicomplete & syntax
-NeoBundleLazy 'othree/html5.vim', {
-            \     'autoload': {'filetypes': ['html']}
-            \  }
-" CSS3 syntax
-NeoBundleLazy 'hail2u/vim-css3-syntax', {
-            \     'autoload': {'filetypes': ['css']}
-            \  }
-" Coq syntax
-NeoBundleLazy 'jvoorhis/coq.vim', {
-            \     'autoload': {'filetypes': ['coq']}
-            \  }
 " coqtop
 NeoBundleLazy 'ymyzk/coqtop-vim', {
             \     'autoload': {'filetypes': ['coq']}
-            \  }
-" QuickRun
-NeoBundleLazy 'thinca/vim-quickrun', {
-            \     'autoload': {'commands': ['QuickRun']}
             \  }
 " vim-ref
 NeoBundleLazy 'thinca/vim-ref', {
@@ -44,15 +30,10 @@ NeoBundleLazy 'thinca/vim-ref', {
 NeoBundleLazy 'Shougo/unite.vim', {
             \     'autoload': {'commands': ['Unite']}
             \  }
-" CoffeeScript
-if v:version >= 704
-    au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
-    NeoBundleLazy 'kchmck/vim-coffee-script', {
-                \     'autoload': {'filetypes': ['coffee']}
-                \  }
-endif
-" lightline
-NeoBundle 'itchyny/lightline.vim'
+" QuickRun
+NeoBundleLazy 'thinca/vim-quickrun', {
+            \     'autoload': {'commands': ['QuickRun']}
+            \  }
 
 " QuickRun settings
 let s:bundle = neobundle#get("vim-quickrun")

@@ -4,6 +4,7 @@
 .vim/bundle
 .vim/config/20-neobundle_start.vim
 .vim/config/21-plugins.vim
+.vim/config/22-syntax.vim
 .vim/config/25-latex.vim
 .vim/config/28-completion.vim
 .vim/config/29-snippet.vim
