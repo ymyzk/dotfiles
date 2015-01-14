@@ -1,4 +1,14 @@
-set nocompatible
+if &compatible
+    set nocompatible
+endif
+
+" Encodings
+" Vim
+set encoding=utf-8
+" Vim script encoding
+scriptencoding utf-8
+" ファイルを開く際のエンコーディング
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
 
 " 256色モード
 " colorscheme よりも前に書くこと
@@ -26,12 +36,6 @@ set mouse=a
 " マッピングはタイムアウトなし
 " キーコードはタイムアウトあり
 set notimeout ttimeout ttimeoutlen=200
-
-" エンコーディング設定
-" Vim 内部のエンコーディング
-set encoding=utf-8
-" ファイルを開く際のエンコーディング
-set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
 
 " スワップ設定
 " スワップファイルを作成
@@ -68,6 +72,8 @@ set ruler
 set number
 " カーソル行の背景色を変える
 set cursorline
+" ウィンドウの最後の行を省略せずに表示する
+set display=lastline
 
 " インデント設定
 " 改行時の自動インデントとスマートインデントを有効化
@@ -85,6 +91,9 @@ set expandtab
 set list
 " 不可視文字のフォーマット
 set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
+
+" ヒストリーの件数
+set history=256
 
 " autocmd
 " ファイル全般に設定
