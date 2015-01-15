@@ -14,6 +14,8 @@ if command_exists tmux; then
             else
                 new_prefix="C-$user_prefix"
             fi
+        else
+            new_prefix="C-${1:0:1}"
         fi
 
         # Change prefix key
