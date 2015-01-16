@@ -19,6 +19,11 @@ if [ $uname = 'Darwin' ]; then
     alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
     alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
+
+    # iOS Device UDID
+    function show-udids() {
+        system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p' | grep "Serial Number:" | awk -F ": " '{print $2}'
+    }
 elif [ $uname = 'Linux' ]; then
     alias ls='ls --color'
 
