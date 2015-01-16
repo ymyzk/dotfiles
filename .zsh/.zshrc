@@ -33,6 +33,10 @@ fi
 if [ -d ~/Development/Go ]; then
     export GOPATH=~/Development/Go
 fi
+# Home
+if [ -d ~/.local/bin ]; then
+    export PATH=~/.local/bin:$PATH
+fi
 
 # Node Version Manager
 # OS X (Homebrew)
