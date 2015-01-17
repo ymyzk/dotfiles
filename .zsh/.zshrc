@@ -76,7 +76,7 @@ fi
 
 # OPAM configuration
 if [ -e ~/.opam/opam-init/init.zsh ]; then
-    . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+    . ~/.opam/opam-init/init.zsh &> /dev/null || true
 fi
 
 # Auto completion
