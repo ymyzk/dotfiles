@@ -74,7 +74,7 @@ set ruler
 " 行番号を表示
 set number
 " カーソル行の背景色を変える
-set cursorline
+"set cursorline
 " ウィンドウの最後の行を省略せずに表示する
 set display=lastline
 
