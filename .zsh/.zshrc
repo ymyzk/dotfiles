@@ -37,7 +37,7 @@ fi
 if [ -d ~/.local/bin ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi
-if [ -d /usr/local/cuda/lib64 ]; then
+if [ -d $HOME/.local/lib ]; then
     export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 fi
 
