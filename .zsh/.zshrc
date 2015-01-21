@@ -35,7 +35,10 @@ if [ -d ~/Development/Go ]; then
 fi
 # Home
 if [ -d ~/.local/bin ]; then
-    export PATH=~/.local/bin:$PATH
+    export PATH=$HOME/.local/bin:$PATH
+fi
+if [ -d /usr/local/cuda/lib64 ]; then
+    export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 fi
 
 # Node Version Manager
