@@ -27,6 +27,7 @@ if [ $uname = 'Darwin' ]; then
     }
 elif [ $uname = 'Linux' ]; then
     alias ls='ls --color'
+    alias ll='ls --color -al'
 
     if command_exists gnome-open; then
         alias open='gnome-open'
