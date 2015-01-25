@@ -22,6 +22,9 @@ function command_exists() {
 if [ $uname = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
 fi
+if command_exists brew; then
+    export HOMEBREW_VERBOSE=true
+fi
 # Linux CUDA
 if [ -d /usr/local/cuda/bin ]; then
     export PATH=/usr/local/cuda/bin:$PATH
