@@ -1,3 +1,4 @@
+alias df='df -h'
 alias tmux='tmux -2'
 
 alias -s js=node
