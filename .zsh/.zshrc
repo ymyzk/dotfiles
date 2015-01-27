@@ -101,6 +101,8 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 
 # Remove path duplications
 typeset -U path cdpath fpath manpath
+typeset -T LD_LIBRARY_PATH ld_library_path
+typeset -U ld_library_path
 
 # ls コマンドの色分け設定
 zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
