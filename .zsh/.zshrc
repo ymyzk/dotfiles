@@ -82,10 +82,10 @@ if [ $uname = 'Linux' ] && [ -e "${HOME}/.nvm/nvm.sh" ]; then
 fi
 
 # virtualenvwrapper
-if _command_exists virtualenvwrapper.sh; then
+if _command_exists virtualenvwrapper_lazy.sh; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/Development
-    source virtualenvwrapper.sh
+    source virtualenvwrapper_lazy.sh
 fi
 
 # Google Cloud SDK
