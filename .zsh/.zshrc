@@ -10,7 +10,7 @@
 local uname=`uname`
 
 function _command_exists() {
-    command -v "$1" &> /dev/null
+    hash "$1" 2>/dev/null
 }
 
 function _add_path_if_exists() {
