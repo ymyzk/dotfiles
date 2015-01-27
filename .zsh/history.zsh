@@ -1,6 +1,6 @@
 HISTFILE=~/.zsh_history
 # Memory
-HISTSIZE=3000
+HISTSIZE=5000
 # File system
 SAVEHIST=100000
 # 重複する履歴を無視する
