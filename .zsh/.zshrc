@@ -32,10 +32,8 @@ function _add_ld_library_path_if_exists() {
 }
 
 function _load_library() {
-    local lib
-    lib=$1
-    if [ -f $lib ]; then
-        . $lib
+    if [ -f $1 ]; then
+        . $1
     fi
 }
 
