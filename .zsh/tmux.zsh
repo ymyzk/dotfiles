@@ -1,4 +1,4 @@
-if command_exists tmux; then
+if _command_exists tmux; then
     function tmux-change-prefix() {
         local old_prefix=$(tmux list-keys | grep 'send-prefix' | tr -s ' ' | cut -d ' ' -f 2)
         local new_prefix='C-b'

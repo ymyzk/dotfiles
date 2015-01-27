@@ -1,7 +1,7 @@
-if command_exists peco; then
+if _command_exists peco; then
     function peco-select-history() {
         local tac
-        if command_exists tac; then
+        if _command_exists tac; then
             tac="tac"
         else
             tac="tail -r"

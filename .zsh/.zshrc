@@ -9,17 +9,17 @@
 
 local uname=`uname`
 
-function command_exists() {
+function _command_exists() {
     command -v "$1" &> /dev/null
 }
 
-function add_path_if_exists() {
+function _add_path_if_exists() {
     if [ -d "$1" ]; then
         export PATH="$1:$PATH"
     fi
 }
 
-function load_library() {
+function _load_library() {
     local lib
     lib=$1
     if [ -f $lib ]; then
@@ -34,13 +34,13 @@ function load_library() {
 # PATH
 # Homebrew
 if [ $uname = 'Darwin' ]; then
-    add_path_if_exists /usr/local/bin
+    _add_path_if_exists /usr/local/bin
 fi
-if command_exists brew; then
+if _command_exists brew; then
     export HOMEBREW_VERBOSE=true
 fi
 # Linux CUDA
-add_path_if_exists /usr/local/cuda/bin
+_add_path_if_exists /usr/local/cuda/bin
 if [ -d /usr/local/cuda/lib64 ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
@@ -49,7 +49,7 @@ if [ -d ~/Development/Go ]; then
     export GOPATH=~/Development/Go
 fi
 # Home
-add_path_if_exists $HOME/.local/bin
+_add_path_if_exists $HOME/.local/bin
 if [ -d $HOME/.local/lib ]; then
     export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 fi
@@ -76,7 +76,7 @@ if [ $uname = 'Linux' ] && [ -e "${HOME}/.nvm/nvm.sh" ]; then
 fi
 
 # virtualenvwrapper
-if command_exists virtualenvwrapper.sh; then
+if _command_exists virtualenvwrapper.sh; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/Development
     source virtualenvwrapper.sh
@@ -151,13 +151,13 @@ bindkey '^[[B' down-line-or-history
 # Incremental history search
 bindkey '^R' history-incremental-search-backward
 
-load_library $ZDOTDIR/aliases.zsh
-load_library $ZDOTDIR/completion.zsh
-load_library $ZDOTDIR/history.zsh
-load_library $ZDOTDIR/prompt.zsh
-load_library $ZDOTDIR/rprompt.zsh
-load_library $ZDOTDIR/peco.zsh
-load_library $ZDOTDIR/tmux.zsh
+_load_library $ZDOTDIR/aliases.zsh
+_load_library $ZDOTDIR/completion.zsh
+_load_library $ZDOTDIR/history.zsh
+_load_library $ZDOTDIR/prompt.zsh
+_load_library $ZDOTDIR/rprompt.zsh
+_load_library $ZDOTDIR/peco.zsh
+_load_library $ZDOTDIR/tmux.zsh
 
 # Profiling
 #if (which zprof > /dev/null) ;then
