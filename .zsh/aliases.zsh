@@ -6,7 +6,6 @@ alias -s py=python
 alias -s txt=cat
 
 if [ $uname = 'Darwin' ]; then
-    alias brew="env PATH=${PATH/:$HOME\/\.pyenv\/shims/} brew"
     alias ls='ls -G'
     alias ll='ls -G -al'
 

@@ -65,15 +65,22 @@ if [ $uname = 'Linux' ] && [ -e "${HOME}/.nvm/nvm.sh" ]; then
     }
 fi
 
+# virtualenvwrapper
+if command_exists virtualenvwrapper.sh; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Development
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # pyenv
-if command_exists pyenv; then
-    eval "$(pyenv init -)"
-    # For tmux
-    export PATH=$HOME/.pyenv/shims:$PATH
-fi
-if command_exists pyenv-virtualenv-init; then
-    eval "$(pyenv virtualenv-init -)"
-fi
+#if command_exists pyenv; then
+#    eval "$(pyenv init -)"
+#    # For tmux
+#    export PATH=$HOME/.pyenv/shims:$PATH
+#fi
+#if command_exists pyenv-virtualenv-init; then
+#    eval "$(pyenv virtualenv-init -)"
+#fi
 
 # Google Cloud SDK
 if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
