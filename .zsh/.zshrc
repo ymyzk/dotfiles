@@ -19,6 +19,14 @@ function add_path_if_exists() {
     fi
 }
 
+function load_library() {
+    local lib
+    lib=$1
+    if [ -f $lib ]; then
+        . $lib
+    fi
+}
+
 # ----- / Helper -----
 
 # ----- Environment variables -----
@@ -142,14 +150,6 @@ bindkey '^[[B' down-line-or-history
 
 # Incremental history search
 bindkey '^R' history-incremental-search-backward
-
-function load_library() {
-    local lib
-    lib=$1
-    if [ -f $lib ]; then
-        . $lib
-    fi
-}
 
 load_library $ZDOTDIR/aliases.zsh
 load_library $ZDOTDIR/completion.zsh
