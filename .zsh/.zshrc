@@ -13,6 +13,12 @@ function command_exists() {
     command -v "$1" &> /dev/null
 }
 
+function add_path_if_exists() {
+    if [ -d "$1" ]; then
+        export PATH="$1:$PATH"
+    fi
+}
+
 # ----- / Helper -----
 
 # ----- Environment variables -----
@@ -20,15 +26,13 @@ function command_exists() {
 # PATH
 # Homebrew
 if [ $uname = 'Darwin' ]; then
-    export PATH=/usr/local/bin:$PATH
+    add_path_if_exists /usr/local/bin
 fi
 if command_exists brew; then
     export HOMEBREW_VERBOSE=true
 fi
 # Linux CUDA
-if [ -d /usr/local/cuda/bin ]; then
-    export PATH=/usr/local/cuda/bin:$PATH
-fi
+add_path_if_exists /usr/local/cuda/bin
 if [ -d /usr/local/cuda/lib64 ]; then
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
@@ -37,9 +41,7 @@ if [ -d ~/Development/Go ]; then
     export GOPATH=~/Development/Go
 fi
 # Home
-if [ -d ~/.local/bin ]; then
-    export PATH=$HOME/.local/bin:$PATH
-fi
+add_path_if_exists $HOME/.local/bin
 if [ -d $HOME/.local/lib ]; then
     export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 fi
@@ -69,18 +71,8 @@ fi
 if command_exists virtualenvwrapper.sh; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/Development
-    source /usr/local/bin/virtualenvwrapper.sh
+    source virtualenvwrapper.sh
 fi
-
-# pyenv
-#if command_exists pyenv; then
-#    eval "$(pyenv init -)"
-#    # For tmux
-#    export PATH=$HOME/.pyenv/shims:$PATH
-#fi
-#if command_exists pyenv-virtualenv-init; then
-#    eval "$(pyenv virtualenv-init -)"
-#fi
 
 # Google Cloud SDK
 if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
@@ -96,6 +88,9 @@ fi
 # Homebrew の site-functions を追加
 if [ -d /usr/local/share/zsh/site-functions ]; then
     fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
+if [ -d /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
 # ls コマンドの色分け設定
