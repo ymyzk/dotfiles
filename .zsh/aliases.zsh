@@ -19,6 +19,7 @@ if [ $uname = 'Darwin' ]; then
     alias ios-simulator='open $(xcode-select -p)/Applications/iOS\ Simulator.app'
     alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
+    alias -s html=open
     alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
 
     # iOS Device UDID
