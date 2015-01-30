@@ -154,6 +154,8 @@ bindkey '^[[B' down-line-or-history
 # Incremental history search
 bindkey '^R' history-incremental-search-backward
 
+_load_library $ZDOTDIR/local.zsh
+
 _load_library $ZDOTDIR/aliases.zsh
 _load_library $ZDOTDIR/completion.zsh
 _load_library $ZDOTDIR/history.zsh
@@ -161,6 +163,7 @@ _load_library $ZDOTDIR/prompt.zsh
 _load_library $ZDOTDIR/rprompt.zsh
 _load_library $ZDOTDIR/peco.zsh
 _load_library $ZDOTDIR/tmux.zsh
+_load_library $ZDOTDIR/yo.zsh
 
 # Profiling
 #if (which zprof > /dev/null) ;then

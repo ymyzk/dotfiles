@@ -19,4 +19,5 @@
 .zsh/prompt.zsh
 .zsh/rprompt.zsh
 .zsh/tmux.zsh
+.zsh/yo.zsh
 .zshenv
