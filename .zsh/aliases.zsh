@@ -30,10 +30,10 @@ elif [ $uname = 'Linux' ]; then
     alias ls='ls --color'
     alias ll='ls --color -al'
 
-    if command_exists gnome-open; then
+    if _command_exists gnome-open; then
         alias open='gnome-open'
     fi
-    if command_exists xsel; then
+    if _command_exists xsel; then
         alias pbcopy='xsel --clipboard --input'
         alias pbpaste='xsel --clipboard --output'
     fi
