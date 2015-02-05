@@ -2,8 +2,9 @@
 # Get it from https://dev.justyo.co
 
 YO_API_URL='https://api.justyo.co/yo/'
+YO_HISTORY_FILE="$HOME/.yo_zsh_history"
 
-function send-yo() {
+function sendyo() {
     local location
     local url
     local username
@@ -11,6 +12,7 @@ function send-yo() {
     local request_command
     local message
     local response
+    local -a success_usernames
     local opt
 
     # Parse arguments
@@ -77,8 +79,48 @@ function send-yo() {
         # Show result
         if [ $response = '200' ]; then
             printf "\r[ OK ] $message\n"
+            success_usernames=($success_usernames $username)
         else
             printf "\r[FAIL] $message\n"
         fi
     done
+
+    _sendyo_save_history $success_usernames
 }
+
+function _sendyo_load_history() {
+    if [ ! -e $YO_HISTORY_FILE ]; then
+        touch $YO_HISTORY_FILE
+    fi
+    _sendyo_usernames=(${(@f)"$(< $YO_HISTORY_FILE)"})
+    return
+}
+
+function _sendyo_save_history() {
+    if [ -z "${_sendyo_usernames+x}" ]; then
+        _sendyo_load_history
+    fi
+    # Update cache
+    _sendyo_usernames=($_sendyo_usernames $@)
+    # Remove duplicates and save to file
+    echo $_sendyo_usernames | tr ' ' '\n' | awk '!a[$0]++' > $YO_HISTORY_FILE
+    return
+}
+
+function _sendyo_args() {
+    if [ -z "${_sendyo_usernames+x}" ]; then
+        _sendyo_load_history
+    fi
+    _describe 'yo_usernames' _sendyo_usernames
+}
+
+function _sendyo() {
+    local state
+    _arguments \
+        '(-h --help)'{-h,--help}'[Show help]' \
+        '(-l --location)'{-l,--location}'[Send Yo Location]:coordinate:()' \
+        '(-u --url)'{-u,--url}'[Send Yo Link]:url:_urls' \
+        '*:args:_sendyo_args'
+}
+
+compdef _sendyo sendyo
