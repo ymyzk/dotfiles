@@ -116,7 +116,7 @@ typeset -U ld_library_path
 # ----- / Environment variables -----
 
 # ls コマンドの色分け設定
-zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # cd コマンドなしでディレクトリを移動する
 setopt auto_cd
