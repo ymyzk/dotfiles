@@ -1,3 +1,8 @@
+# キャッシュの使用
+zstyle ':completion:*' use-cache true
+# 候補のハイライト
+zstyle ':completion:*:default' menu select=2
+
 # pip zsh completion start
 function _pip_completion {
     local words cword
