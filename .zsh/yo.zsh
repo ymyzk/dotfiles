@@ -115,11 +115,10 @@ function _sendyo_args() {
 }
 
 function _sendyo() {
-    local state
     _arguments \
         '(-h --help)'{-h,--help}'[Show help]' \
-        '(-l --location)'{-l,--location}'[Send Yo Location]:coordinate:()' \
-        '(-u --url)'{-u,--url}'[Send Yo Link]:url:_urls' \
+        '(-l --location -u --url)'{-l,--location}'[Send Yo Location]:coordinate:()' \
+        '(-l --location -u --url)'{-u,--url}'[Send Yo Link]:url:_urls' \
         '*:args:_sendyo_args'
 }
 
