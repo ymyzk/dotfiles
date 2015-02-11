@@ -5,13 +5,9 @@ YO_API_URL='https://api.justyo.co/yo/'
 YO_HISTORY_FILE="$HOME/.yo_zsh_history"
 
 function sendyo() {
-    local location
-    local url
-    local username
-    local usernames
-    local request_command
-    local message
-    local response
+    local location url username
+    local -a usernames
+    local request_command message response
     local -a success_usernames
     local opt
 
