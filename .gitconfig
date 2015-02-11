@@ -42,3 +42,16 @@
     lga     = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
     lsu     = ls-files -o --exclude-standard
     show-ignored = ls-files --exclude-standard --others --ignored
+
+[diff "utf-16"]
+    textconv = iconv -f utf-16 -t utf-8
+
+[filter "media"]
+    clean       = git media clean %f
+    smudge      = git media smudge %f
+    required    = true
+
+[filter "hawser"]
+    clean       = git hawser clean %f
+    smudge      = git hawser smudge %f
+    required    = true
