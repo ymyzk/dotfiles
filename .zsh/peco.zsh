@@ -14,7 +14,6 @@ if _command_exists peco; then
 
     function _peco-ssh-select-host() {
         local host
-        echo "$LBUFFER"
         host=$(grep -iE '^host' ~/.ssh/config | awk '{print $2}' | peco)
         if [ "$host" != '' ]; then
             ssh $@ $host
