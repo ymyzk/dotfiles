@@ -44,7 +44,7 @@ fi
 # 各種圧縮ファイルの解凍
 function extract() {
     case $1 in
-        *.tar.bz2|*.tbz) tar xjvf $1;;
+        *tar.bz|*.tar.bz2|*.tbz) tar xjvf $1;;
         *.tar.gz|*.tgz) tar xzvf $1;;
         *.tar.xz) tar xJvf $1;;
         *.tar.Z|*.taz) tar xzvf $1;;
