@@ -1,5 +1,5 @@
 # YO_API_TOKEN is required.
-# Get it from https://dev.justyo.co
+# Get it from https://dev.justyo.co/
 
 YO_API_URL='https://api.justyo.co/yo/'
 YO_HISTORY_FILE="$HOME/.yo_zsh_history"
