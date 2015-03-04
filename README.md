@@ -14,6 +14,6 @@ cd .dotfiles
 ```
 cd ~
 cd .dotfiles
-git pull
+git pull --rebase
 ./install.sh dotfiles.txt
 ```
