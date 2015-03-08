@@ -1,6 +1,11 @@
 # dotfiles
 My dotfiles.
 
+* Git
+* Tmux
+* Vim
+* Zsh
+
 ## Usage
 ### Install
 ```
