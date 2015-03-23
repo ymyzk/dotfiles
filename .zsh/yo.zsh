@@ -113,7 +113,7 @@ function _sendyo_args() {
 function _sendyo() {
     _arguments \
         '(-h --help)'{-h,--help}'[Show help]' \
-        '(-l --location -u --url)'{-l,--location}'[Send Yo Location]:coordinate:()' \
+        '(-l --location -u --url)'{-l,--location}'[Send Yo Location {lat,lon}]:coordinate:()' \
         '(-l --location -u --url)'{-u,--url}'[Send Yo Link]:url:_urls' \
         '*:args:_sendyo_args'
 }
