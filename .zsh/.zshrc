@@ -164,6 +164,7 @@ _load_library $ZDOTDIR/rprompt.zsh
 _load_library $ZDOTDIR/peco.zsh
 _load_library $ZDOTDIR/tmux.zsh
 _load_library $ZDOTDIR/yo.zsh
+_load_library /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Profiling
 #if (which zprof > /dev/null) ;then
