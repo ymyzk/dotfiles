@@ -2,6 +2,7 @@
 My dotfiles.
 
 * Git
+* Screen
 * Tmux
 * Vim
 * Zsh
