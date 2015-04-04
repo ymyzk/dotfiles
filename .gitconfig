@@ -1,6 +1,10 @@
 [include]
     path = ~/.gitconfig.local
 
+[user]
+    name = Yusuke Miyazaki
+    email = miyazaki.dev@gmail.com
+
 [merge]
     ff = false
 
