@@ -53,8 +53,9 @@ fi
 _add_path_if_exists /usr/local/cuda/bin
 _add_ld_library_path_if_exists /usr/local/cuda/lib64
 # Go
-if [ -d ~/Development/Go ]; then
-    export GOPATH=~/Development/Go
+if [ -d $HOME/Development/Go ]; then
+    export GOPATH=$HOME/Development/Go
+    _add_path_if_exists $HOME/Development/Go/bin
 fi
 # Home
 _add_path_if_exists $HOME/.local/bin
