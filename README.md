@@ -13,6 +13,8 @@ My dotfiles.
 cd ~
 git clone https://github.com/ymyzk/dotfiles.git .dotfiles
 cd .dotfiles
+git submodule init
+git submodule update
 ./install.sh dotfiles.txt
 ```
 
