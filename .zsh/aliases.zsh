@@ -3,6 +3,7 @@ alias tmux='tmux -2'
 
 alias -s js=node
 alias -s py=python
+alias -s sh=sh
 alias -s txt=cat
 
 if [ $uname = 'Darwin' ]; then
