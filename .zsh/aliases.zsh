@@ -60,3 +60,5 @@ function extract() {
     esac
 }
 alias -s {arz,bz2,gz,lzh,rar,tar,tbz,tgz,xz,Z,zip}=extract
+
+alias generate-django-secret-key="python -c \"import random; print(''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)))\""
