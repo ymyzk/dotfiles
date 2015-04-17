@@ -43,9 +43,10 @@ function _load_library() {
 
 # PATH
 # Homebrew
-if [ $uname = 'Darwin' ]; then
-    _add_path_if_exists /usr/local/bin
-fi
+_add_path_if_exists /usr/local/bin
+# Linuxbrew
+_add_path_if_exists $HOME/.linuxbrew/bin
+# Brew
 if _command_exists brew; then
     export HOMEBREW_VERBOSE=true
 fi
