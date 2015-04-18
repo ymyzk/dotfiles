@@ -96,8 +96,8 @@ if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
 fi
 
 # OPAM configuration
-if [ -e ~/.opam/opam-init/init.zsh ]; then
-    . ~/.opam/opam-init/init.zsh &> /dev/null || true
+if [ -e $HOME/.opam/opam-init/init.zsh ]; then
+    . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
 # Auto completion
