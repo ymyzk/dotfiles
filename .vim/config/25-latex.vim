@@ -1,5 +1,5 @@
 " Vim-LaTeX
-NeoBundleLazy 'git://git.code.sf.net/p/vim-latex/vim-latex', {
+NeoBundleLazy 'https://github.com/vim-latex/vim-latex.git', {
             \     'autoload': {'filetypes': ['tex']}
             \  }
 
