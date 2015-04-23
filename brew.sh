@@ -22,7 +22,7 @@ brew install binutils
 brew install closure-compiler
 brew install coq
 brew install coreutils
-brew install emacs --cocoa
+brew install emacs --with-cocoa
 brew install exiftool
 #brew install gauche
 # For OpenMP (--without-multilib)
