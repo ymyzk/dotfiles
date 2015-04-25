@@ -30,13 +30,14 @@ brew install gcc --without-multilib
 #brew install gdb
 brew install ghc
 brew install git
-brew install go
 brew install gnupg
+brew install go
+brew install graphicsmagick --with-ghostscript --with-jasper --with-libtiff --with-libwmf --with-little-cms --with-little-cms2 --with-perl --with-webp --with-x11
 brew install graphviz --with-app
 brew install heroku-toolbelt
 brew install htop
 brew install hub
-#imagemagick
+brew install imagemagick --with-fftw --with-fontconfig --with-ghostscript --with-hdri --with-jp2 --with-liblqr --with-librsvg --with-libtiff --with-libwmf --with-little-cms --with-little-cms2 --with-openexr --with-pango --with-perl --with-webp --with-x11
 brew install juman
 brew install llvm33
 brew install llvm36
@@ -64,8 +65,6 @@ brew install r
 brew install reattach-to-user-namespace
 brew install ruby
 brew install sl
-# sshfs needs additional settings
-#brew install sshfs
 brew install sqlite
 brew install tig
 brew install tmux
