@@ -56,6 +56,7 @@ brew install nvm
 brew install objective-caml
 brew install opencv
 brew install peco
+brew install php56
 brew install proof-general --with-emacs=/usr/local/bin/emacs
 brew install pypy
 brew install pypy3
