@@ -30,6 +30,7 @@ brew install gcc --without-multilib
 #brew install gdb
 brew install ghc
 brew install git
+brew install gnu-sed
 brew install gnupg
 brew install go
 brew install graphicsmagick --with-ghostscript --with-jasper --with-libtiff --with-libwmf --with-little-cms --with-little-cms2 --with-perl --with-webp --with-x11
@@ -64,6 +65,7 @@ brew install qemu
 brew install r
 brew install reattach-to-user-namespace
 brew install ruby
+brew install rust
 brew install sl
 brew install sqlite
 brew install tig
