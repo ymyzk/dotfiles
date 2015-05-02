@@ -3,20 +3,18 @@ alias tmux='tmux -2'
 
 alias -s js=node
 alias -s py=python
-alias -s sh=sh
 alias -s txt=cat
 
 if [ $uname = 'Darwin' ]; then
     alias ls='ls -G'
     alias ll='ls -G -al'
 
-    # Browsers
     alias canary='open -a Google\ Chrome\ Canary'
     alias chrome='open -a Google\ Chrome'
     alias firefox='open -a Firefox'
     alias safari='open -a Safari'
+    alias cot='open -a CotEditor'
 
-    # OS X
     alias ios-simulator='open $(xcode-select -p)/Applications/iOS\ Simulator.app'
     alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
 
