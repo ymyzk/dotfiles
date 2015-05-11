@@ -15,6 +15,7 @@
 .zsh/aliases.zsh
 .zsh/completion.zsh
 .zsh/history.zsh
+.zsh/htpasswd.zsh
 .zsh/peco.zsh
 .zsh/prompt.zsh
 .zsh/rprompt.zsh
