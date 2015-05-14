@@ -96,6 +96,9 @@ if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
 fi
 
 # OPAM configuration
+if _command_exists opam; then
+    eval `opam config env`
+fi
 if [ -e $HOME/.opam/opam-init/init.zsh ]; then
     . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
