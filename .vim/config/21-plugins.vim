@@ -17,6 +17,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomasr/molokai'
 " lightline
 NeoBundle 'itchyny/lightline.vim'
+" editorconfig
+NeoBundle 'editorconfig/editorconfig-vim'
 
 " coqtop
 NeoBundleLazy 'ymyzk/coqtop-vim', {
