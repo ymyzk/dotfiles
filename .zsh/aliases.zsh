@@ -29,7 +29,9 @@ elif [ $uname = 'Linux' ]; then
     alias ls='ls --color'
     alias ll='ls --color -al'
 
-    if _command_exists gnome-open; then
+    if _command_exists xdg-open; then
+        alias open='xdg-open'
+    elif _command_exists gnome-open; then
         alias open='gnome-open'
     fi
     if _command_exists xsel; then
