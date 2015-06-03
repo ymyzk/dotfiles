@@ -19,6 +19,10 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 " editorconfig
 NeoBundle 'editorconfig/editorconfig-vim'
+" caw.vim (comment out)
+NeoBundle 'tyru/caw.vim'
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
 
 " coqtop
 NeoBundleLazy 'ymyzk/coqtop-vim', {
