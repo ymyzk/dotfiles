@@ -1,5 +1,5 @@
 # user@host
-local p_uh="%F{green}%n@%m%f${WINDOW+[$WINDOW]}"
+local p_uh="%(?.%F{green}.%F{magenta})%n@%m%f${WINDOW+[$WINDOW]}"
 # current directory
 local p_cd="%F{cyan}%~%f"
 # prefix (root-># user->$)
