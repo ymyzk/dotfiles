@@ -43,7 +43,7 @@ elif [ $uname = 'Linux' ]; then
 fi
 
 # 各種圧縮ファイルの解凍
-function extract() {
+function _extract() {
     case $1 in
         *tar.bz|*.tar.bz2|*.tbz) tar xjvf $1;;
         *.tar.gz|*.tgz) tar xzvf $1;;
@@ -60,6 +60,6 @@ function extract() {
         *.zip) unzip $1;;
     esac
 }
-alias -s {arz,bz2,gz,lzh,rar,tar,tbz,tgz,xz,Z,zip}=extract
+alias -s {arz,bz2,gz,lzh,rar,tar,tbz,tgz,xz,Z,zip}=_extract
 
 alias generate-django-secret-key="python -c \"import random; print(''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)))\""
