@@ -18,7 +18,6 @@ brew tap ymyzk/ymyzk
 
 # Packages
 brew install binutils
-#brew install cabal-install
 brew install closure-compiler
 brew install coq
 brew install coreutils
