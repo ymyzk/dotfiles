@@ -24,7 +24,7 @@ brew install coreutils
 brew install emacs --with-cocoa
 brew install exiftool
 brew install ffmpeg --with-faac --with-fdk-aac --with-ffplay --with-fontconfig --with-freetype --with-frei0r --with-libass --with-libbluray --with-libcaca --with-libquvi --with-libsoxr --with-libssh --with-libvidstab --with-libvorbis --with-libvpx --with-opencore-amr --with-openjpeg --with-openssl --with-opus --with-rtmpdump --with-schroedinger --with-speex --with-theora --with-tools --with-webp --with-x265
-#brew install gauche
+brew install gauche
 # For OpenMP (--without-multilib)
 brew install gcc --without-multilib
 #brew install gdb
