@@ -10,6 +10,10 @@ function sendyo() {
   local request_command message response
   local -a success_usernames
   local opt
+  local color_clear='\e[0m'
+  local color_ok='\e[0;32m'
+  local color_fail='\e[0;31m'
+  local tmpfile=$(mktemp 2>/dev/null || mktemp -t yo_zsh)
 
   # Parse arguments
   for opt in "$@"; do
@@ -59,13 +63,13 @@ function sendyo() {
     # Prepare request
     if [[ -n "$location" ]]; then
       message="Yo Location! $location $username"
-      request_command="curl --silent --write-out %{http_code} --output /dev/null -d api_token=$YO_API_TOKEN -d username=$username $YO_API_URL -d 'location=$location'"
+      request_command="curl --silent --write-out %{http_code} --output ${tmpfile} -d api_token=$YO_API_TOKEN -d username=$username $YO_API_URL -d 'location=$location'"
     elif [[ -n "$url" ]]; then
       message="Yo Link! $url $username"
-      request_command="curl --silent --write-out %{http_code} --output /dev/null -d api_token=$YO_API_TOKEN -d username=$username $YO_API_URL -d 'link=$url'"
+      request_command="curl --silent --write-out %{http_code} --output ${tmpfile} -d api_token=$YO_API_TOKEN -d username=$username $YO_API_URL -d 'link=$url'"
     else
       message="Yo! $username"
-      request_command="curl --silent --write-out %{http_code} --output /dev/null -d api_token=$YO_API_TOKEN -d username=$username $YO_API_URL"
+      request_command="curl --silent --write-out %{http_code} --output ${tmpfile} -d api_token=$YO_API_TOKEN -d username=$username $YO_API_URL"
     fi
 
     # Send request
@@ -74,22 +78,27 @@ function sendyo() {
 
     # Show result
     if [ $response = '200' ]; then
-      printf "\r[ OK ] $message\n"
+      printf "\r[ ${color_ok}OK${color_clear} ] $message\n"
       success_usernames=($success_usernames $username)
     else
-      printf "\r[FAIL] $message\n"
+      printf "\r[${color_fail}FAIL${color_clear}] $message\n"
+      cat "$tmpfile"
+      echo
     fi
   done
+
+  if [ -e $tmpfile ]; then
+    rm "$tmpfile"
+  fi
 
   _sendyo_save_history $success_usernames
 }
 
 function _sendyo_load_history() {
   if [ ! -e $YO_HISTORY_FILE ]; then
-      touch $YO_HISTORY_FILE
+    touch $YO_HISTORY_FILE
   fi
   _sendyo_usernames=(${(@f)"$(< $YO_HISTORY_FILE)"})
-  return
 }
 
 function _sendyo_save_history() {
@@ -100,7 +109,6 @@ function _sendyo_save_history() {
   _sendyo_usernames=($_sendyo_usernames $@)
   # Remove duplicates and save to file
   echo $_sendyo_usernames | tr ' ' '\n' | awk '!a[$0]++' > $YO_HISTORY_FILE
-  return
 }
 
 function _sendyo_args() {
