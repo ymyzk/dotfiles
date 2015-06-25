@@ -15,6 +15,7 @@ if [ $uname = 'Darwin' ]; then
     alias safari='open -a Safari'
     alias cot='open -a CotEditor'
 
+    alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
     alias ios-simulator='open $(xcode-select -p)/Applications/iOS\ Simulator.app'
     alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
     alias osx-sleep="osascript -e 'tell application \"Finder\" to sleep'"
