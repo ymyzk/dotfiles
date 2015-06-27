@@ -15,8 +15,6 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 " Color scheme
 NeoBundle 'tomasr/molokai'
-" lightline
-NeoBundle 'itchyny/lightline.vim'
 " editorconfig
 NeoBundle 'editorconfig/editorconfig-vim'
 " caw.vim (comment out)
