@@ -27,7 +27,6 @@ brew install ffmpeg --with-faac --with-fdk-aac --with-ffplay --with-fontconfig -
 brew install gauche
 # For OpenMP (--without-multilib)
 brew install gcc --without-multilib
-#brew install gdb
 brew install ghc
 brew install git
 brew install gnu-sed
