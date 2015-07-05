@@ -149,8 +149,8 @@ setopt nolistbeep
 # 末尾の / を自動的に削除しない
 setopt noautoremoveslash
 
-# Vi キーバインド
-bindkey -v
+# Emacs キーバインド
+bindkey -e
 
 # 標準のキーバインドだと, 履歴を見る際にカーソルが先頭に移動する挙動を修正
 bindkey '^[[A' up-line-or-history
