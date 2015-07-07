@@ -41,7 +41,6 @@ brew install imagemagick --with-fftw --with-fontconfig --with-ghostscript --with
 brew install juman
 brew install llvm33
 brew install llvm36
-#brew install llvm36 --with-lld --with-lldb --with-python
 brew install mecab
 brew install mecab-ipadic
 brew install mercurial
