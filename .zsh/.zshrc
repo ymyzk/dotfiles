@@ -44,6 +44,7 @@ function _load_library() {
 # PATH
 # Homebrew
 _add_path_if_exists /usr/local/bin
+_add_path_if_exists /usr/local/sbin
 # Linuxbrew
 _add_path_if_exists $HOME/.linuxbrew/bin
 # Brew
