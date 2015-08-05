@@ -51,7 +51,7 @@ brew install neovim --HEAD
 brew install nkf
 brew install nmap
 brew install nvm
-brew install objective-caml
+brew install ocaml
 brew install opam
 brew install opencv
 brew install opencv3 --with-python3
