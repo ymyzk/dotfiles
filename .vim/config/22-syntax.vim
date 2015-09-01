@@ -17,3 +17,8 @@ if v:version >= 704
                 \     'autoload': {'filetypes': ['coffee']}
                 \  }
 endif
+" Scala
+au BufRead,BufNewFile,BufReadPre *.scala set filetype=scala
+NeoBundleLazy 'derekwyatt/vim-scala', {
+                \     'autoload': {'filetypes': ['scala']}
+                \  }
