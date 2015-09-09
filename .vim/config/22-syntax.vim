@@ -1,6 +1,6 @@
 " HTML5 ominicomplete & syntax
 NeoBundleLazy 'othree/html5.vim', {
-            \     'autoload': {'filetypes': ['html']}
+            \     'autoload': {'filetypes': ['html', 'htmldjango']}
             \  }
 " CSS3 syntax
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
