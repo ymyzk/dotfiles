@@ -25,7 +25,7 @@ function! s:bundle.hooks.on_source(bundle)
         let g:Tex_MakeIndexFlavor = '/usr/texbin/mendex -U $*.idx'
         let g:Tex_UseEditorSettingInDVIViewer = 1
         let g:Tex_ViewRule_dvi = '/usr/bin/open -a Preview'
-        let g:Tex_ViewRule_pdf = '/usr/bin/open -a Preview'
+        let g:Tex_ViewRule_pdf = '/usr/bin/open -a Skim'
     elseif OSTYPE == "Linux\n"
         set shellslash
         set grepprg=grep\ -nH\ $*
