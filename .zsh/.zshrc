@@ -170,7 +170,7 @@ _load_library $ZDOTDIR/prompt.zsh
 _load_library $ZDOTDIR/rprompt.zsh
 _load_library $ZDOTDIR/peco.zsh
 _load_library $ZDOTDIR/tmux.zsh
-_load_library $ZDOTDIR/yo.zsh
+_load_library $ZDOTDIR/yo/yo.zsh
 
 _load_library $ZDOTDIR/local.zsh
 
