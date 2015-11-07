@@ -1,12 +1,19 @@
 #!/bin/bash
 
+packages=(
+  'babel'
+  'bower'
+  'browserify'
+  'coffee-script'
+  'generator-hubot'
+  'grunt-cli'
+  'jshint'
+  'typescript'
+  'yo'
+)
+
+echo "Updating npm"
 npm install -g npm
 
-npm install -g babel
-npm install -g bower
-npm install -g coffee-script
-npm install -g generator-hubot
-npm install -g grunt-cli
-npm install -g jshint
-npm install -g typescript
-npm install -g yo
+echo "Installing packages: ${packages[*]}"
+npm install -g ${packages[*]}
