@@ -1,0 +1,17 @@
+snippet     reset
+abbr        reset (fun () -> ...)
+alias       rst
+options     word
+    reset (fun () -> ${1:TARGET})
+
+snippet     shift
+abbr        shift (fun k -> ...)
+alias       sft
+options     word
+    shift (fun k -> ${1:TARGET})
+
+snippet     shift_
+abbr        shift (fun _ -> ...)
+alias       sft_
+options     word
+    shift (fun _ -> ${1:TARGET})

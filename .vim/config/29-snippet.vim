@@ -15,16 +15,19 @@ function! s:bundle.hooks.on_source(bundle)
     xmap <C-k>     <Plug>(neosnippet_expand_target)
 
     " SuperTab like snippets behavior.
-    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-                \ "\<Plug>(neosnippet_expand_or_jump)"
-                \: pumvisible() ? "\<C-n>" : "\<TAB>"
+    imap <expr><TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ neosnippet#expandable_or_jumpable() ?
+    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
     smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-                \ "\<Plug>(neosnippet_expand_or_jump)"
-                \: "\<TAB>"
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-    " For snippet_complete marker.
+    " For conceal markers.
     if has('conceal')
-        set conceallevel=2 concealcursor=i
+        set conceallevel=2 concealcursor=niv
     endif
+
+    " Custom snippets
+    let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 endfunction
 unlet s:bundle
