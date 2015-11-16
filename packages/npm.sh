@@ -5,6 +5,7 @@ packages=(
   'bower'
   'browserify'
   'coffee-script'
+  'eslint'
   'generator-hubot'
   'grunt-cli'
   'jshint'
