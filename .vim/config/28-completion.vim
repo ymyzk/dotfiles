@@ -1,3 +1,7 @@
+" For merlin
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
 " Auto completion
 if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
     " neocomplete
@@ -89,6 +93,9 @@ if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
         " For perlomni.vim setting.
         " https://github.com/c9s/perlomni.vim
         let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+        " For merlin
+        let g:neocomplete#sources#omni#input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
     endfunction
     unlet s:bundle
 else
