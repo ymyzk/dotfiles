@@ -1,0 +1,11 @@
+detox
+httpie
+ipython[notebook]
+# http://matplotlib.org/faq/virtualenv_faq.html
+matplotlib<1.5
+numpy
+pandas
+pip-tools
+scipy
+vanity
+wheel
