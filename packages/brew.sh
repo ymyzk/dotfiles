@@ -65,6 +65,7 @@ brew install python
 brew install python3
 brew install qemu
 brew install r
+brew install racket
 brew install reattach-to-user-namespace
 brew install ruby
 brew install rust
@@ -72,6 +73,7 @@ brew install sl
 brew install sqlite
 brew install tig
 brew install tmux
+brew install tree
 brew install unrar
 brew install vim --with-luajit --HEAD
 brew install watch
