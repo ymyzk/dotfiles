@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 packages=(
   'core'
@@ -6,6 +7,8 @@ packages=(
   'merlin'
   'utop'
 )
+
+opam update
 
 echo "Installing packages: ${packages[*]}"
 opam install ${packages[*]}
