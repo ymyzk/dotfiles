@@ -6,9 +6,21 @@ NeoBundleLazy 'othree/html5.vim', {
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
             \     'autoload': {'filetypes': ['css']}
             \  }
+" for vim-jsx
+NeoBundle 'pangloss/vim-javascript', {
+            \     'autoload': {'filetypes': ['javascript']}
+            \  }
+" React JSX
+NeoBundle 'mxw/vim-jsx', {
+            \     'autoload': {'filetypes': ['javascript.jsx']}
+            \  }
 " Coq syntax
 NeoBundleLazy 'jvoorhis/coq.vim', {
             \     'autoload': {'filetypes': ['coq']}
+            \  }
+" Scala
+NeoBundleLazy 'derekwyatt/vim-scala', {
+            \     'autoload': {'filetypes': ['scala']}
             \  }
 " CoffeeScript
 if v:version >= 704
@@ -17,8 +29,3 @@ if v:version >= 704
                 \     'autoload': {'filetypes': ['coffee']}
                 \  }
 endif
-" Scala
-au BufRead,BufNewFile,BufReadPre *.scala set filetype=scala
-NeoBundleLazy 'derekwyatt/vim-scala', {
-                \     'autoload': {'filetypes': ['scala']}
-                \  }
