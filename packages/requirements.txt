@@ -1,4 +1,5 @@
 detox
+flake8
 httpie
 ipython[notebook]
 # http://matplotlib.org/faq/virtualenv_faq.html
