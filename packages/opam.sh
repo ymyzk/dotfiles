@@ -2,10 +2,13 @@
 set -eu
 
 packages=(
+  'atdgen'
   'core'
   'menhir'
   'merlin'
+  'omake'
   'utop'
+  'yojson'
 )
 
 opam update
