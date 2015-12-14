@@ -54,8 +54,12 @@ fi
 # Linux CUDA
 _add_path_if_exists /usr/local/cuda/bin
 _add_ld_library_path_if_exists /usr/local/cuda/lib64
-# OS X Android Platform-Tools
-_add_path_if_exists $HOME/Library/Android/sdk/platform-tools
+# Android on OS X
+if [ -d $HOME/Library/Android/sdk ]; then
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  _add_path_if_exists "$ANDROID_HOME/tools"
+  _add_path_if_exists "$ANDROID_HOME/platform-tools"
+fi
 # Go
 if [ -d $HOME/Development/Go ]; then
     export GOPATH=$HOME/Development/Go
