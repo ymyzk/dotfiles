@@ -1,7 +1,7 @@
 #!/bin/bash
 
 packages=(
-  'babel'
+  'babel-cli'
   'bower'
   'browserify'
   'coffee-script'
