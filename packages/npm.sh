@@ -8,6 +8,7 @@ packages=(
   'eslint'
   'generator-hubot'
   'grunt-cli'
+  'gulp'
   'jshint'
   'typescript'
   'yo'
