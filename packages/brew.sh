@@ -67,6 +67,7 @@ brew install qemu
 brew install r
 brew install racket
 brew install reattach-to-user-namespace
+brew install rlwrap
 brew install ruby
 brew install rust
 brew install sl
