@@ -1,11 +1,13 @@
 # dotfiles
 My dotfiles.
 
-* Git
-* Screen
-* Tmux
-* Vim
-* Zsh
+- dotfiles
+  - Git
+  - Screen
+  - Tmux
+  - Vim
+  - Zsh
+- packages
 
 ## Usage
 ### Install
