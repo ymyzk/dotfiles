@@ -42,5 +42,7 @@ function! s:bundle.hooks.on_source(bundle)
         let g:Tex_ViewRule_dvi = '/usr/bin/gnome-open'
         let g:Tex_ViewRule_pdf = '/usr/bin/gnome-open'
     endif
+    " conceal を無効化
+    let g:tex_conceal = ""
 endfunction
 unlet s:bundle
