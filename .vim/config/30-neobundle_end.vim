@@ -1,10 +1,11 @@
 call neobundle#end()
 
 " ファイル形式別インデントとプラグインを有効化
-" NeoBundle で必要
+" Required:
 filetype indent plugin on
 
-" Installation check.
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
 NeoBundleCheck
 
 " on_source を実行
