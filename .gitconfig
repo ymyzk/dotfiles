@@ -35,7 +35,6 @@
     pl      = pull
     ps      = push
     pst     = push --tags
-    sb      = show-branch
     sh      = show
     sm      = submodule
     smst    = submodule status
