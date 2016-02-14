@@ -15,6 +15,15 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+if neobundle#load_cache(
+            \ expand('<sfile>'),
+            \ '~/.vim/config/neobundlelazy.toml')
+    " Let NeoBundle manage NeoBundle
+    " Required:
+    NeoBundleFetch 'Shougo/neobundle.vim'
+
+    " call neobundle#load_toml('~/.vim/config/neobundle.toml')
+    call neobundle#load_toml('~/.vim/config/neobundlelazy.toml', {'lazy' : 1})
+
+    NeoBundleSaveCache
+endif

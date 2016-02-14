@@ -11,6 +11,7 @@
 .vim/config/29-snippet.vim
 .vim/config/30-neobundle_end.vim
 .vim/config/40-filetypes.vim
+.vim/config/neobundlelazy.toml
 .vim/snippets
 .vimrc
 .zsh/.zshrc
