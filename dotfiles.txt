@@ -1,7 +1,6 @@
 .gitconfig
 .tmux.conf
 .vim/after/ftplugin
-.vim/bundle
 .vim/config/20-dein_start.vim
 .vim/config/21-plugins.vim
 .vim/config/22-snippet.vim

@@ -1,7 +1,6 @@
 .gitconfig
 .tmux.conf
 .vim/after/ftplugin
-.vim/bundle
 .vim/config/40-filetypes.vim
 .vimrc
 .zsh/.zshrc
