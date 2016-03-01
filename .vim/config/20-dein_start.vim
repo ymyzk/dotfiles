@@ -1,12 +1,6 @@
 "dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
 set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
 call dein#begin(expand('~/.cache/dein'))
 
 let s:toml_path = '~/.vim/config/dein.toml'
