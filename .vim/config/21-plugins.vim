@@ -1,47 +1,14 @@
-" vimproc
-NeoBundle 'Shougo/vimproc.vim', {
-            \ 'build' : {
-            \     'windows' : 'tools\\update-dll-mingw',
-            \     'cygwin' : 'make -f make_cygwin.mak',
-            \     'mac' : 'make -f make_mac.mak',
-            \     'linux' : 'make',
-            \     'unix' : 'gmake',
-            \    },
-            \ }
+augroup MyAutoCmd
+  autocmd!
+augroup END
 
-" ZenCoding
-NeoBundle 'mattn/emmet-vim'
-" surround
-NeoBundle 'tpope/vim-surround'
-" Color scheme
-NeoBundle 'tomasr/molokai'
-" editorconfig
-NeoBundle 'editorconfig/editorconfig-vim'
-" caw.vim (comment out)
-NeoBundle 'tyru/caw.vim'
-nmap <Leader>c <Plug>(caw:i:toggle)
-vmap <Leader>c <Plug>(caw:i:toggle)
+if dein#tap('caw.vim')
+  nmap <Leader>c <Plug>(caw:i:toggle)
+  vmap <Leader>c <Plug>(caw:i:toggle)
+endif
 
-" coqtop
-NeoBundleLazy 'ymyzk/coqtop-vim', {
-            \     'autoload': {'filetypes': ['coq']}
-            \  }
-" vim-ref
-NeoBundleLazy 'thinca/vim-ref', {
-            \     'autoload': {'commands': ['Ref']}
-            \  }
-" Unite
-NeoBundleLazy 'Shougo/unite.vim', {
-            \     'autoload': {'commands': ['Unite']}
-            \  }
-" QuickRun
-NeoBundleLazy 'thinca/vim-quickrun', {
-            \     'autoload': {'commands': ['QuickRun']}
-            \  }
-
-" QuickRun settings
-let s:bundle = neobundle#get("vim-quickrun")
-function! s:bundle.hooks.on_source(bundle)
+if dein#tap('vim-quickrun')
+  function! s:quickrun_on_source() abort
     " デフォルトで vimproc を使って非同期で実行する
     let g:quickrun_config = {
                 \   "_" : {
@@ -52,5 +19,7 @@ function! s:bundle.hooks.on_source(bundle)
                 \      "cmdopt" : "-std=c99"
                 \   }
                 \}
-endfunction
-unlet s:bundle
+  endfunction
+  execute 'autocmd MyAutoCmd User' 'dein#source#'.g:dein#name
+        \ 'call s:quickrun_on_source()'
+endif

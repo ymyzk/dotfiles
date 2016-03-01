@@ -1,14 +1,5 @@
-" neosnippet.vim
-NeoBundleLazy 'Shougo/neosnippet.vim', {
-            \     'autoload': {'insert': 1}
-            \  }
-" neosnippet-snippets
-NeoBundleLazy 'Shougo/neosnippet-snippets', {
-            \     'autoload': {'insert': 1}
-            \  }
-
-let s:bundle = neobundle#get("neosnippet.vim")
-function! s:bundle.hooks.on_source(bundle)
+if dein#tap('neosnippet.vim')
+  function! s:neosnippet_on_source() abort
     " Plugin key-mappings.
     imap <C-k>     <Plug>(neosnippet_expand_or_jump)
     smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -24,10 +15,12 @@ function! s:bundle.hooks.on_source(bundle)
 
     " For conceal markers.
     if has('conceal')
-        set conceallevel=2 concealcursor=niv
+      set conceallevel=2 concealcursor=niv
     endif
 
     " Custom snippets
     let g:neosnippet#snippets_directory = '~/.vim/snippets/'
-endfunction
-unlet s:bundle
+  endfunction
+  execute 'autocmd MyAutoCmd User' 'dein#source#'.g:dein#name
+        \ 'call s:neosnippet_on_source()'
+endif

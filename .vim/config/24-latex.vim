@@ -1,11 +1,5 @@
-" Vim-LaTeX
-NeoBundleLazy 'https://github.com/vim-latex/vim-latex.git', {
-            \     'autoload': {'filetypes': ['tex']}
-            \  }
-
-" Vim-LaTeX settings
-let s:bundle = neobundle#get("vim-latex")
-function! s:bundle.hooks.on_source(bundle)
+if dein#tap('vim-latex')
+  function! s:latex_on_source() abort
     let OSTYPE = system('uname')
     if OSTYPE == "Darwin\n"
         set shellslash
@@ -44,5 +38,7 @@ function! s:bundle.hooks.on_source(bundle)
     endif
     " conceal を無効化
     let g:tex_conceal = ""
-endfunction
-unlet s:bundle
+  endfunction
+  execute 'autocmd MyAutoCmd User' 'dein#source#'.g:dein#name
+        \ 'call s:latex_on_source()'
+endif

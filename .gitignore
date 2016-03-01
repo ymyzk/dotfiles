@@ -4,4 +4,6 @@
 .vim/bundle/*
 .vim/view/*
 !.vim/bundle/neobundle.vim
+.vim/dein/*
+!.vim/dein/repos/github.com/Shougo/dein.vim
 .zsh/.zcompdump
