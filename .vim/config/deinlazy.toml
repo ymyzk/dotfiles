@@ -32,3 +32,34 @@ on_ft = 'scala'
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = 'QuickRun'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+on_cmd = 'Ref'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+on_cmd = 'Unite'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+on_i = 1
+on_ft = 'snippet'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+disabled = '!has("lua")'
+on_i = 1
+
+[[plugins]]
+repo = 'vim-latex/vim-latex'
+on_ft = 'tex'

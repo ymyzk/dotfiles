@@ -1,7 +1,7 @@
 .DS_Store
 *.swp
 .vim/.netrwhist
-.vim/bundle/*
+.vim/dein/*
+!.vim/dein/repos/github.com/Shougo/dein.vim
 .vim/view/*
-!.vim/bundle/neobundle.vim
 .zsh/.zcompdump
