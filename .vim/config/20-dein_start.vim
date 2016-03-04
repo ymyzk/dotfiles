@@ -1,7 +1,7 @@
 "dein Scripts-----------------------------
 set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('~/.cache/dein'))
+call dein#begin(expand('~/.vim/dein'))
 
 let s:toml_path = '~/.vim/config/dein.toml'
 let s:toml_lazy_path = '~/.vim/config/deinlazy.toml'
