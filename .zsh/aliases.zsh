@@ -6,42 +6,9 @@ alias -s py=python
 alias -s txt=cat
 
 if [ $uname = 'Darwin' ]; then
-    alias ls='ls -G'
-    alias ll='ls -G -al'
-
-    alias canary='open -a Google\ Chrome\ Canary'
-    alias chrome='open -a Google\ Chrome'
-    alias firefox='open -a Firefox'
-    alias safari='open -a Safari'
-    alias cot='open -a CotEditor'
-
-    alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
-    alias ios-simulator='open $(xcode-select -p)/Applications/iOS\ Simulator.app'
-    alias rm-open-in-duplicates="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
-    alias osx-sleep="osascript -e 'tell application \"Finder\" to sleep'"
-
-    alias -s html=open
-    alias -s {png,jpg,bmp,pdf,PNG,JPG,BMP,PDF}='open -a Preview'
-
-    # iOS Device UDID
-    function show-udids() {
-        system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p' | grep "Serial Number:" | awk -F ": " '{print $2}'
-    }
+  _load_library $ZDOTDIR/aliases_darwin.zsh
 elif [ $uname = 'Linux' ]; then
-    alias ls='ls --color'
-    alias ll='ls --color -al'
-
-    if _command_exists xdg-open; then
-        alias open='xdg-open'
-    elif _command_exists gnome-open; then
-        alias open='gnome-open'
-    fi
-    if _command_exists xsel; then
-        alias pbcopy='xsel --clipboard --input'
-        alias pbpaste='xsel --clipboard --output'
-    fi
-
-    alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
+  _load_library $ZDOTDIR/aliases_linux.zsh
 fi
 
 # 各種圧縮ファイルの解凍
