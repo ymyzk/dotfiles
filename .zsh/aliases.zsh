@@ -1,6 +1,11 @@
 alias df='df -h'
 alias tmux='tmux -2'
 
+if _command_exists stack; then
+    alias ghc='stack ghc --'
+    alias ghci='stack ghci --'
+fi
+
 alias -s js=node
 alias -s py=python
 alias -s txt=cat
