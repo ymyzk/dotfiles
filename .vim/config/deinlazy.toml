@@ -34,6 +34,10 @@ repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]]
+repo = 'wlangstroth/vim-racket'
+on_ft = 'racket'
+
+[[plugins]]
 repo = 'kchmck/vim-coffee-script'
 on_ft = 'coffee'
 
