@@ -4,6 +4,8 @@ alias tmux='tmux -2'
 if _command_exists stack; then
     alias ghc='stack ghc --'
     alias ghci='stack ghci --'
+    alias runghc='stack runghc --'
+    alias runhaskell='stack runhaskell --'
 fi
 
 alias -s js=node
