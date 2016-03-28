@@ -10,7 +10,7 @@
 .vim/config/40-filetypes.vim
 .vim/config/dein.toml
 .vim/config/deinlazy.toml
-.vim/dein
+.vim/dein.vim
 .vim/snippets
 .vimrc
 .zsh/.zshrc
