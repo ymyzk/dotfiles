@@ -3,8 +3,8 @@ augroup MyAutoCmd
 augroup END
 
 if dein#tap('caw.vim')
-  nmap <Leader>c <Plug>(caw:tildepos:toggle)
-  vmap <Leader>c <Plug>(caw:tildepos:toggle)
+  nmap <Leader>c <Plug>(caw:hatpos:toggle)
+  vmap <Leader>c <Plug>(caw:hatpos:toggle)
 endif
 
 if dein#tap('vim-quickrun')
