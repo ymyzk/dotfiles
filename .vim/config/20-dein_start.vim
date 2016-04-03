@@ -1,4 +1,8 @@
 "dein Scripts-----------------------------
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
 set runtimepath^=~/.vim/dein.vim
 
 let s:base_path = expand('~/.cache/dein.vim')

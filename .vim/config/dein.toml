@@ -10,6 +10,14 @@ repo = 'tyru/caw.vim'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+hook_add = '''
+  "let g:molokai_original = 1
+  let g:rehash256 = 1
+  set background=dark
+  " カーソル行の背景色を変える
+  set cursorline
+  colorscheme molokai
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
