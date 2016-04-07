@@ -25,11 +25,3 @@ filetype plugin indent on
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
-
-" Color scheme
-colorscheme molokai
-"let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
-" カーソル行の背景色を変える
-set cursorline
