@@ -10,6 +10,18 @@ if _command_exists stack; then
   alias runhaskell='stack runhaskell --'
 fi
 
+# rlwrap
+if _command_exists rlwrap; then
+  if _command_exists ochacaml; then
+    alias ochacaml='rlwrap ochacaml'
+  fi
+
+  if _command_exists racket; then
+    alias racket='rlwrap racket'
+    alias tracket='rlwrap racket -I typed/racket'
+  fi
+fi
+
 alias generate-django-secret-key="python -c \"import random; print(''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)))\""
 alias http-server="python2 -m SimpleHTTPServer"
 
