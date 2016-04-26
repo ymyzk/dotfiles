@@ -3,9 +3,14 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-set runtimepath^=~/.vim/dein.vim
-
 let s:base_path = expand('~/.cache/dein.vim')
+let s:dein_path = s:base_path . '/repos/github.com/Shougo/dein.vim'
+
+if !isdirectory(s:dein_path)
+  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_path
+endif
+execute 'set runtimepath^=' . substitute(fnamemodify(s:dein_path, ':p') , '/$', '', '')
+
 if dein#load_state(s:base_path)
   let s:toml_path = '~/.vim/config/dein.toml'
   let s:toml_lazy_path = '~/.vim/config/deinlazy.toml'
