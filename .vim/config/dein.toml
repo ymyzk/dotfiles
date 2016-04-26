@@ -6,9 +6,6 @@ repo = 'Shougo/vimproc.vim'
 build = 'make' # Linux & OS X only
 
 [[plugins]]
-repo = 'tyru/caw.vim'
-
-[[plugins]]
 repo = 'tomasr/molokai'
 hook_add = '''
   "let g:molokai_original = 1

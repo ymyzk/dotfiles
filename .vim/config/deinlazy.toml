@@ -82,3 +82,11 @@ on_i = 1
 [[plugins]]
 repo = 'vim-latex/vim-latex'
 on_ft = 'tex'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_map = [['nx', '<Plug>']]
+hook_add = '''
+  nmap <Leader>c <Plug>(caw:hatpos:toggle)
+  vmap <Leader>c <Plug>(caw:hatpos:toggle)
+'''
