@@ -1,6 +1,3 @@
 [submodule ".zsh/yo"]
 	path = .zsh/yo
 	url = https://github.com/ymyzk/yo.zsh.git
-[submodule ".vim/dein.vim"]
-	path = .vim/dein.vim
-	url = https://github.com/Shougo/dein.vim.git
