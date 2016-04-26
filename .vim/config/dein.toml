@@ -28,5 +28,5 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-[[plugins]]
-repo = 'editorconfig/editorconfig-vim'
+# [[plugins]]
+# repo = 'editorconfig/editorconfig-vim'
