@@ -50,6 +50,7 @@ _add_path_if_exists $HOME/.linuxbrew/bin
 # Brew
 if _command_exists brew; then
     export HOMEBREW_VERBOSE=true
+    export HOMEBREW_NO_ANALYTICS=1
 fi
 # Linux CUDA
 _add_path_if_exists /usr/local/cuda/bin
