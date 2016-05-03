@@ -68,3 +68,5 @@ brew 'xz'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
+
+brew 'ymyzk/ymyzk/ochacaml'
