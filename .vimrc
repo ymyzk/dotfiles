@@ -15,7 +15,7 @@ set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,latin1
 set t_Co=256
 " デフォルトの colorscheme
 " NeoBundle でインストールしたもので上書きされうる
-colorscheme desert
+" colorscheme desert
 
 syntax on
 
