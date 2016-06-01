@@ -70,6 +70,6 @@ fi
 ###-end-npm-completion-###
 
 # The next line enables bash completion for gcloud.
-if [ -e '~/Development/google-cloud-sdk/completion.zsh.inc' ]; then
-    source '~/Development/google-cloud-sdk/completion.zsh.inc'
+if [ -e '~/Applications/google-cloud-sdk/completion.zsh.inc' ]; then
+    source '~/Applications/google-cloud-sdk/completion.zsh.inc'
 fi
