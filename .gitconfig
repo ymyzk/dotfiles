@@ -46,6 +46,10 @@
     lsu     = ls-files -o --exclude-standard
     show-ignored = ls-files --exclude-standard --others --ignored
 
+[diff]
+    # Git 2.9.0+
+    compactionHeuristic = true
+
 [diff "utf-16"]
     textconv = iconv -f utf-16 -t utf-8
 
