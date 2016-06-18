@@ -8,6 +8,7 @@ alias chrome='open -a Google\ Chrome'
 alias firefox='open -a Firefox'
 alias safari='open -a Safari'
 alias cot='open -a CotEditor'
+alias skim='open -a Skim'
 
 # Suffix aliases
 
