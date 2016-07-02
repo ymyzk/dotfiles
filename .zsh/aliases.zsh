@@ -24,6 +24,7 @@ fi
 
 alias generate-django-secret-key="python -c \"import random; print(''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)))\""
 alias http-server="python2 -m SimpleHTTPServer"
+alias remove-docker-dangling-images='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 
 # Suffix aliases
 
