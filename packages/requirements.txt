@@ -1,5 +1,6 @@
 detox
 flake8
+http-prompt
 httpie
 ipython[notebook]
 # http://matplotlib.org/faq/virtualenv_faq.html
@@ -8,5 +9,6 @@ numpy
 pandas
 pip-tools
 scipy
+twine
 vanity
 wheel
