@@ -30,6 +30,7 @@ brew 'docker-compose'
 brew 'docker-machine'
 brew 'emacs', args: ['with-cocoa']
 brew 'exiftool'
+brew 'gcc'
 brew 'git'
 brew 'go'
 brew 'haskell-stack'
