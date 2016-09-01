@@ -102,8 +102,8 @@ if _command_exists virtualenvwrapper_lazy.sh; then
 fi
 
 # Google Cloud SDK
-if [ -e ~/Development/google-cloud-sdk/path.zsh.inc ]; then
-    source ~/Development/google-cloud-sdk/path.zsh.inc
+if [ -e ~/Applications/google-cloud-sdk/path.zsh.inc ]; then
+    source ~/Applications/google-cloud-sdk/path.zsh.inc
 fi
 
 # OPAM configuration
