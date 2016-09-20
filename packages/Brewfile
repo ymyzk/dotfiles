@@ -60,7 +60,7 @@ brew 'tig'
 brew 'tmux'
 brew 'tree'
 brew 'unrar'
-brew 'vim', args: ['with-luajit', 'HEAD']
+brew 'vim', args: ['with-lua', 'HEAD']
 brew 'watch'
 brew 'wget'
 brew 'xz'
