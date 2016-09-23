@@ -72,7 +72,7 @@ _add_ld_library_path_if_exists $HOME/.local/lib
 
 # Node Version Manager
 # OS X (Homebrew)
-if [ $uname = 'Darwin' ] && [ $(brew --prefix nvm)/nvm.sh ]; then
+if [ $uname = 'Darwin' ] && _command_exists brew && [ $(brew --prefix nvm)/nvm.sh ]; then
     export NVM_DIR=~/.nvm
     # Lazy
     nvm() {
