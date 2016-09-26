@@ -42,6 +42,10 @@ repo = 'kchmck/vim-coffee-script'
 on_ft = 'coffee'
 
 [[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 hook_add = '''
