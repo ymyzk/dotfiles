@@ -3,7 +3,6 @@
 .vim/after/ftplugin
 .vim/config/20-dein_start.vim
 .vim/config/21-plugins.vim
-.vim/config/22-snippet.vim
 .vim/config/23-completion.vim
 .vim/config/29-dein_end.vim
 .vim/config/40-filetypes.vim
