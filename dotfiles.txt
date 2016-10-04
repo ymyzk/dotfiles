@@ -5,11 +5,11 @@
 .vim/config/21-plugins.vim
 .vim/config/22-snippet.vim
 .vim/config/23-completion.vim
-.vim/config/24-latex.vim
 .vim/config/29-dein_end.vim
 .vim/config/40-filetypes.vim
 .vim/config/dein.toml
 .vim/config/deinlazy.toml
+.vim/config/plugins
 .vim/snippets
 .vimrc
 .zsh/.zshrc
