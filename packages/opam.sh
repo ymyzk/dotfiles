@@ -4,9 +4,12 @@ set -eu
 packages=(
   'atdgen'
   'core'
+  'flowtype'
   'menhir'
   'merlin'
+  'ocamlspot'
   'omake'
+  'ounit'
   'utop'
   'yojson'
 )
