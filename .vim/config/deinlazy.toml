@@ -94,6 +94,14 @@ on_ft = 'tex'
 hook_source = 'source ~/.vim/config/plugins/latex.vim'
 
 [[plugins]]
+repo = 'cohama/the-ocamlspot.vim'
+on_ft = 'ocaml'
+
+[[plugins]]
+repo = 'ymyzk/vim-copl'
+on_ft = 'copl'
+
+[[plugins]]
 repo = 'tyru/caw.vim'
 on_map = [['nx', '<Plug>']]
 hook_add = '''
