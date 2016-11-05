@@ -10,13 +10,6 @@ alias safari='open -a Safari'
 alias cot='open -a CotEditor'
 alias skim='open -a Skim'
 
-# Wrap commands for tmux
-if _command_exists reattach-to-user-namespace; then
-  alias launchctl='reattach-to-user-namespace launchctl'
-  alias pbcopy='reattach-to-user-namespace pbcopy'
-  alias pbpaste='reattach-to-user-namespace pbpaste'
-fi
-
 # Suffix aliases
 
 alias -s html=open
