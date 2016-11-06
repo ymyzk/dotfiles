@@ -89,9 +89,9 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'vim-latex/vim-latex'
+repo = 'lervag/vimtex'
 on_ft = 'tex'
-hook_source = 'source ~/.vim/config/plugins/latex.vim'
+hook_source = 'source ~/.vim/config/plugins/tex.vim'
 
 [[plugins]]
 repo = 'cohama/the-ocamlspot.vim'
