@@ -20,6 +20,10 @@ if dein#load_state(s:base_path)
   call dein#load_toml(s:toml_path, {'lazy': 0})
   call dein#load_toml(s:toml_lazy_path, {'lazy' : 1})
 
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  call dein#add(g:opamshare . "/merlin/vim",
+                \ {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
+
   call dein#end()
   call dein#save_state()
 endif
