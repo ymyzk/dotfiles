@@ -27,6 +27,7 @@ brew 'colordiff'
 brew 'coq'
 brew 'coreutils'
 brew 'emacs', args: ['with-cocoa']
+brew 'erlang'
 brew 'exiftool'
 brew 'gcc'
 brew 'git'
