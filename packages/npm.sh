@@ -1,17 +1,10 @@
 #!/bin/bash
 
 packages=(
-  'babel-cli'
   'bower'
   'browserify'
-  'coffee-script'
-  'eslint'
-  'generator-hubot'
-  'grunt-cli'
-  'gulp'
-  'jshint'
   'typescript'
-  'yo'
+  'yarn'
 )
 
 echo "Updating npm"
