@@ -74,13 +74,14 @@ on_i = 1
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets']
+depends = ['context_filetype.vim', 'neosnippet-snippets']
 on_event = 'InsertEnter'
 on_ft = 'snippet'
 hook_source = 'source ~/.vim/config/plugins/neosnippet.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+depends = 'context_filetype.vim'
 if = "has('lua')"
 on_event = 'InsertEnter'
 hook_source = '''
@@ -117,3 +118,6 @@ hook_add = '''
   nmap <Leader>c <Plug>(caw:hatpos:toggle)
   vmap <Leader>c <Plug>(caw:hatpos:toggle)
 '''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
