@@ -21,8 +21,15 @@ if dein#load_state(s:base_path)
   call dein#load_toml(s:toml_lazy_path, {'lazy': 1})
 
   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-  call dein#add(g:opamshare . "/merlin/vim",
-                \ {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
+  let s:merlin_path = g:opamshare . "/merlin/vim"
+   if isdirectory(s:merlin_path)
+     call dein#add(s:merlin_path, {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
+  endif
+
+  " call dein#local('~/Development',
+  "             \ {
+  "             \   'frozen' : 1
+  "             \ }, ["vim-copl"])
 
   call dein#end()
   call dein#save_state()
