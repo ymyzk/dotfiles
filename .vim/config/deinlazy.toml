@@ -121,3 +121,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+# It may be better to activate on different events
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+on_event = 'InsertEnter'
