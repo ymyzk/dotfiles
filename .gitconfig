@@ -15,8 +15,9 @@
     ui = auto
 
 [core]
-    editor  = vim
-    pager   = less -R
+    editor      = vim
+    quotepath   = false
+    pager       = less -R
 
 [alias]
     a       = add
