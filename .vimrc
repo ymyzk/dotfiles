@@ -98,4 +98,10 @@ set listchars=tab:»\ ,trail:-,extends:»,precedes:«,nbsp:%
 " ヒストリーの件数
 set history=256
 
+if version >= 704
+    " スペルチェックで日本語を除外
+    " 厳密には 7.4.088 以降で対応
+    set spelllang=en,cjk
+endif
+
 runtime! config/*.vim
