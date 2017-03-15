@@ -12,3 +12,13 @@ if _command_exists xsel; then
 fi
 
 alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
+
+function apt-list-obsolute-packages() {
+  if _command_exists aptitude; then
+    aptitude search '~o'
+  elif _command_exists apt-show-versions; then
+    apt-show-versions | grep 'No available version'
+  else
+    false
+  fi
+}
