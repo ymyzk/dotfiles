@@ -1,5 +1,8 @@
 .gitconfig
 .tmux.conf
+.config/nvim/after/ftplugin
+.config/nvim/config/40-filetypes.vim
+.config/nvim/init.vim
 .vim/after/ftplugin
 .vim/config/40-filetypes.vim
 .vimrc

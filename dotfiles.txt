@@ -1,5 +1,13 @@
 .gitconfig
 .tmux.conf
+.config/nvim/after/ftplugin
+.config/nvim/config/20-dein_start.vim
+.config/nvim/config/40-filetypes.vim
+.config/nvim/config/dein.toml
+.config/nvim/config/deinlazy.toml
+.config/nvim/config/plugins
+.config/nvim/init.vim
+.config/nvim/snippets
 .vim/after/ftplugin
 .vim/config/20-dein_start.vim
 .vim/config/40-filetypes.vim
