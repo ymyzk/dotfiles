@@ -66,6 +66,8 @@ if [ -d $HOME/Development/Go ]; then
     export GOPATH=$HOME/Development/Go
     _add_path_if_exists $HOME/Development/Go/bin
 fi
+# Rust
+_add_path_if_exists $HOME/.cargo/bin
 # Home
 _add_path_if_exists $HOME/.local/bin
 _add_ld_library_path_if_exists $HOME/.local/lib
