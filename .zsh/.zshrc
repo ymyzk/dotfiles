@@ -172,6 +172,8 @@ bindkey '^[[B' down-line-or-history
 # Incremental history search
 bindkey '^R' history-incremental-search-backward
 
+autoload -Uz zmv
+
 _load_library /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 _load_library $ZDOTDIR/aliases.zsh
