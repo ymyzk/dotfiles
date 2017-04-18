@@ -46,6 +46,10 @@ repo = 'fatih/vim-go'
 on_ft = 'go'
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 hook_add = '''
