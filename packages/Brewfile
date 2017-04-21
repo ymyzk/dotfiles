@@ -26,6 +26,8 @@ brew 'cmake'
 brew 'colordiff'
 brew 'coq'
 brew 'coreutils'
+brew 'docker-completion'
+brew 'docker-compose-completion'
 brew 'emacs', args: ['with-cocoa']
 brew 'erlang'
 brew 'exiftool'
@@ -75,9 +77,6 @@ brew 'xz'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
-
-brew 'homebrew/completions/docker-completion'
-brew 'homebrew/completions/docker-compose-completion'
 
 brew 'neovim/neovim/neovim'
 
