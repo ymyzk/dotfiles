@@ -50,6 +50,10 @@ repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
 
 [[plugins]]
+repo = 'psosera/ott-vim'
+on_ft = 'ott'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 hook_add = '''
