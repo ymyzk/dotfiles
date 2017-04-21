@@ -3,8 +3,7 @@ flake8
 http-prompt
 httpie
 ipython[notebook]
-# http://matplotlib.org/faq/virtualenv_faq.html
-matplotlib<1.5
+matplotlib
 numpy
 pandas
 pip-tools
