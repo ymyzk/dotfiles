@@ -135,3 +135,7 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+on_event = 'InsertEnter'
