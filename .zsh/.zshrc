@@ -96,6 +96,9 @@ fi
 # nodebrew
 _add_path_if_exists $HOME/.nodebrew/current/bin
 
+# yarn
+_add_path_if_exists $HOME/.yarn/bin
+
 # virtualenvwrapper
 if _command_exists virtualenvwrapper_lazy.sh; then
     export WORKON_HOME=$HOME/.virtualenvs
