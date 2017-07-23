@@ -18,6 +18,7 @@
     editor      = vim
     quotepath   = false
     pager       = less -R
+    excludesfile    = ~/.gitignore_global
 
 [alias]
     a       = add

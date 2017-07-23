@@ -1,4 +1,5 @@
 .gitconfig
+.gitignore_global
 .tmux.conf
 .config/nvim/after/ftplugin
 .config/nvim/config/20-dein_start.vim
