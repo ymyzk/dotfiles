@@ -1,10 +1,6 @@
 [include]
     path = ~/.gitconfig.local
 
-[user]
-    name = Yusuke Miyazaki
-    email = miyazaki.dev@gmail.com
-
 [merge]
     ff = false
 
@@ -69,3 +65,6 @@
     clean       = git media clean %f
     smudge      = git media smudge %f
     required    = true
+
+[ghq]
+    root = ~/Development
