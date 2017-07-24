@@ -104,4 +104,12 @@ if version >= 704
     set spelllang=en,cjk
 endif
 
+if has("nvim")
+    if executable("/usr/local/bin/python3")
+        let g:python3_host_prog = "/usr/local/bin/python3"
+    elseif executable("/usr/bin/python3")
+        let g:python3_host_prog = "/usr/bin/python3"
+    endif
+endif
+
 runtime! config/*.vim
