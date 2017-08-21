@@ -23,6 +23,7 @@ if dein#load_state(s:base_path)
   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
   let s:merlin_path = g:opamshare . "/merlin/vim"
    if isdirectory(s:merlin_path)
+     call dein#add(s:merlin_path, {'lazy': 1, 'on_ft': 'merlin', 'on_event': 'InsertEnter'})
      call dein#add(s:merlin_path, {'lazy': 1, 'on_ft': 'ocaml', 'on_event': 'InsertEnter'})
   endif
 
