@@ -22,6 +22,7 @@
 .zsh/aliases_darwin.zsh
 .zsh/aliases_linux.zsh
 .zsh/completion.zsh
+.zsh/functions
 .zsh/history.zsh
 .zsh/peco.zsh
 .zsh/prompt.zsh

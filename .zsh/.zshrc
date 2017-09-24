@@ -124,6 +124,8 @@ fi
 _add_fpath_if_exists /usr/local/share/zsh/site-functions
 # zsh-users/zsh-completions
 _add_fpath_if_exists /usr/local/share/zsh-completions
+# Custom
+_add_fpath_if_exists $ZDOTDIR/functions
 
 # ls コマンドの色分け設定
 export LSCOLORS=ExFxCxdxBxegedabagacad
