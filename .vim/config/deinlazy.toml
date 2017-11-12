@@ -80,6 +80,12 @@ on_cmd = 'Ref'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 on_cmd = 'Unite'
+if = '!has("nvim")'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+if = 'has("nvim")'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
