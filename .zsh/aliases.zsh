@@ -30,6 +30,8 @@ fi
 
 alias generate-django-secret-key="python -c \"import random; print(''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)))\""
 alias remove-docker-dangling-images='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+alias global-ip='curl -s http://checkip.amazonaws.com/ | tr -d "\n"'
+alias global-host='global-ip | xargs host'
 
 # Suffix aliases
 
