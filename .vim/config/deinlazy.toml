@@ -18,6 +18,11 @@ on_ft = 'javascript'
 repo = 'mxw/vim-jsx'
 on_ft = 'javascript.jsx'
 
+# TypeScript
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
 # Coq syntax
 [[plugins]]
 repo = 'jvoorhis/coq.vim'

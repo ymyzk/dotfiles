@@ -12,6 +12,8 @@ augroup filetypes
   autocmd BufRead,BufNewFile *.rkt set filetype=racket
   autocmd BufRead,BufNewFile *.sc set filetype=c
   autocmd BufRead,BufNewFile *.tc set filetype=c
+  " Needs plugin
+  autocmd BufRead,BufNewFile *.ts set filetype=typescript
   autocmd BufRead,BufNewFile *.webapp set filetype=json
   autocmd BufRead,BufNewFile Brewfile set filetype=ruby
   autocmd BufRead,BufNewFile Podfile set filetype=ruby
