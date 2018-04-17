@@ -5,13 +5,10 @@ tap 'homebrew/bundle'
 tap 'homebrew/completions'
 tap 'homebrew/dupes'
 tap 'homebrew/nginx'
-tap 'homebrew/php'
 tap 'homebrew/python'
-tap 'homebrew/science'
 tap 'homebrew/versions'
 
 tap 'mackerelio/mackerel-agent'
-tap 'neovim/neovim'
 tap 'ymyzk/ymyzk'
 
 # Homebrew
