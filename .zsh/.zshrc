@@ -71,6 +71,8 @@ _add_path_if_exists $HOME/.cargo/bin
 # Home
 _add_path_if_exists $HOME/.local/bin
 _add_ld_library_path_if_exists $HOME/.local/lib
+# Python (macOS User)
+_add_path_if_exists $HOME/Library/Python/3.6/bin
 
 # Node Version Manager
 # OS X (Homebrew)
