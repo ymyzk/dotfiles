@@ -27,3 +27,8 @@ cd .dotfiles
 git pull --rebase
 ./install.sh dotfiles.txt
 ```
+
+## Neovim
+```console
+$ pip3 install --user neovim
+```
