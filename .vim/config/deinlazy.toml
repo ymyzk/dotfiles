@@ -24,9 +24,16 @@ repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
 # Coq syntax
+# repo = 'jvoorhis/coq.vim'
+
+# For coquille
 [[plugins]]
-repo = 'jvoorhis/coq.vim'
+repo = 'let-def/vimbufsync'
+
+[[plugins]]
+repo = 'the-lambda-church/coquille'
 on_ft = 'coq'
+depends = 'vimbufsync'
 
 # Scala
 [[plugins]]
