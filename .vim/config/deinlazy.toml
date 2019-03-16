@@ -66,6 +66,10 @@ repo = 'psosera/ott-vim'
 on_ft = 'ott'
 
 [[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = 'tf'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 hook_add = '''
