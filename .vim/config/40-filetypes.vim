@@ -16,6 +16,7 @@ augroup filetypes
   autocmd BufRead,BufNewFile *.ts set filetype=typescript
   autocmd BufRead,BufNewFile *.webapp set filetype=json
   autocmd BufRead,BufNewFile Brewfile set filetype=ruby
+  autocmd BufRead,BufNewFile Pipfile set filetype=toml
   autocmd BufRead,BufNewFile Podfile set filetype=ruby
 augroup END
 
