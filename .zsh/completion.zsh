@@ -15,6 +15,14 @@ function _pip_completion {
 compctl -K _pip_completion pip
 # pip zsh completion end
 
+#compdef pipenv
+_pipenv() {
+  eval $(env COMMANDLINE="${words[1,$CURRENT]}" _PIPENV_COMPLETE=complete-zsh pipenv)
+}
+if [[ "$(basename ${(%):-%x})" != "_pipenv" ]]; then
+  compdef _pipenv pipenv
+fi
+
 ###-begin-npm-completion-###
 #
 # npm command completion script
