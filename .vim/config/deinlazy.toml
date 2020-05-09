@@ -110,16 +110,6 @@ on_ft = 'snippet'
 hook_source = 'source ~/.vim/config/plugins/neosnippet.vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-depends = 'context_filetype.vim'
-if = "has('lua')"
-on_event = 'InsertEnter'
-hook_source = '''
-  let g:neocomplete#enable_at_startup = 1
-  source ~/.vim/config/plugins/neocomplete.vim
-'''
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
 on_i = 1
