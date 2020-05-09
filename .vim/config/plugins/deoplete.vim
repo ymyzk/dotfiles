@@ -9,7 +9,8 @@ endif
 
 
 " For merlin
-let g:deoplete#omni_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
+" let g:deoplete#omni#input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
+let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
 
 " For vimtex
 let g:deoplete#omni#input_patterns.tex = '\\(?:'
