@@ -42,13 +42,6 @@ if dein#load_state(s:base_path)
   call dein#save_state()
 endif
 
-"let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
-" カーソル行の背景色を変える
-set cursorline
-colorscheme molokai
-
 filetype plugin indent on
 syntax enable
 
@@ -56,3 +49,13 @@ syntax enable
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
+
+" colorscheme related configuration must be done after dein config
+"let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
+" カーソル行の背景色を変える
+set cursorline
+colorscheme molokai
+" Override molokai
+hi Normal ctermbg=232
