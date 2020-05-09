@@ -138,6 +138,16 @@ repo = 'cohama/the-ocamlspot.vim'
 on_ft = 'ocaml'
 
 [[plugins]]
+repo = 'eagletmt/neco-ghc'
+on_ft = 'haskell'
+hook_add = '''
+  " Disable haskell-vim omnifunc
+  let g:haskellmode_completion_ghc = 0
+  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+  let g:necoghc_enable_detailed_browse = 1
+'''
+
+[[plugins]]
 repo = 'ymyzk/vim-copl'
 on_ft = 'copl'
 
