@@ -13,7 +13,6 @@ brew tap homebrew/php
 brew tap homebrew/python
 brew tap homebrew/science
 brew tap homebrew/versions
-brew tap neovim/homebrew-neovim
 brew tap ymyzk/ymyzk
 
 # Packages

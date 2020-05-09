@@ -4,6 +4,7 @@ tap 'homebrew/boneyard'
 tap 'homebrew/bundle'
 tap 'homebrew/completions'
 tap 'homebrew/dupes'
+tap 'caskroom/fonts'
 tap 'homebrew/nginx'
 tap 'homebrew/python'
 tap 'homebrew/versions'
@@ -78,3 +79,5 @@ brew 'zsh-syntax-highlighting'
 brew 'neovim/neovim/neovim'
 
 brew 'ymyzk/ymyzk/ochacaml'
+
+cask 'font-ibm-plex'
