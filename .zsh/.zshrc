@@ -74,6 +74,8 @@ _add_ld_library_path_if_exists $HOME/.local/lib
 # Python (macOS User)
 _add_path_if_exists $HOME/Library/Python/2.7/bin
 _add_path_if_exists $HOME/Library/Python/3.7/bin
+_add_path_if_exists $HOME/Library/Python/3.8/bin
+_add_path_if_exists $HOME/Library/Python/3.9/bin
 
 # Node Version Manager
 # OS X (Homebrew)
