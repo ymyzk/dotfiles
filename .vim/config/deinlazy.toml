@@ -161,3 +161,7 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+on_event = 'InsertEnter'
