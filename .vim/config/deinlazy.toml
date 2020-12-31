@@ -165,3 +165,22 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+if = 'has("nvim")'
+on_event = 'InsertEnter'
+# Language servers are not started automatically for some reasons with lazy loading
+hook_post_source = 'call lsp#enable()'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+depends = ['vim-lsp']
+if = 'has("nvim")'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+depends = ['vim-lsp']
+if = 'has("nvim")'
+on_event = 'InsertEnter'
