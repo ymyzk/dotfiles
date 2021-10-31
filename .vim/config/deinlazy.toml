@@ -87,7 +87,14 @@ on_cmd = 'Ref'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
-if = 'has("nvim")'
+if = 'has("nvim") && has("python3")'
+hook_source = 'source ~/.vim/config/plugins/denite.vim'
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+on_cmd = 'Defx'
+if = 'has("nvim") && has("python3")'
+hook_source = 'source ~/.vim/config/plugins/defx.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
