@@ -50,10 +50,6 @@ repo = 'wlangstroth/vim-racket'
 on_ft = 'racket'
 
 [[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = 'coffee'
-
-[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
 
@@ -87,11 +83,6 @@ hook_add = '''
 [[plugins]]
 repo = 'thinca/vim-ref'
 on_cmd = 'Ref'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-on_cmd = 'Unite'
-if = '!has("nvim")'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
