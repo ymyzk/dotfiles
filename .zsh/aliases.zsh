@@ -36,8 +36,15 @@ alias global-host='global-ip | xargs host'
 # Suffix aliases
 
 alias -s js=node
-alias -s py=python
 alias -s txt=cat
+
+if _command_exists python; then
+  alias -s py=python
+elif _command_exists python3; then
+  alias -s py=python3
+elif _command_exists python2; then
+  alias -s py=python2
+fi
 
 # 各種圧縮ファイルの解凍
 function _extract() {
