@@ -96,17 +96,6 @@ on_cmd = 'Defx'
 if = 'has("nvim") && has("python3")'
 hook_source = 'source ~/.vim/config/plugins/defx.vim'
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_i = 1
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['context_filetype.vim', 'neosnippet-snippets']
-on_event = 'InsertEnter'
-on_ft = 'snippet'
-hook_source = 'source ~/.vim/config/plugins/neosnippet.vim'
-
 # For ddc.vim
 [[plugins]]
 repo = 'vim-denops/denops.vim'
