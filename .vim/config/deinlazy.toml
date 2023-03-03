@@ -107,14 +107,54 @@ on_event = 'InsertEnter'
 on_ft = 'snippet'
 hook_source = 'source ~/.vim/config/plugins/neosnippet.vim'
 
+# For ddc.vim
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['denops.vim']
 if = "has('nvim')"
-on_i = 1
-hook_source = '''
-  let g:deoplete#enable_at_startup = 1
-  source ~/.vim/config/plugins/deoplete.vim
-'''
+on_event = 'InsertEnter'
+hook_source = 'source ~/.vim/config/plugins/ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-converter_remove_overlap'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-omni'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'shun/ddc-source-vim-lsp'
+depends = ['vim-lsp', 'vim-lsp-settings']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+# Language servers are not started automatically for some reasons with lazy loading
+hook_post_source = 'call lsp#enable()'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+depends = ['vim-lsp']
 
 [[plugins]]
 repo = 'lervag/vimtex'
@@ -162,23 +202,4 @@ on_event = 'InsertEnter'
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-if = 'has("nvim")'
-on_event = 'InsertEnter'
-# Language servers are not started automatically for some reasons with lazy loading
-hook_post_source = 'call lsp#enable()'
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-depends = ['vim-lsp']
-if = 'has("nvim")'
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-depends = ['vim-lsp']
-if = 'has("nvim")'
 on_event = 'InsertEnter'
