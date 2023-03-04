@@ -23,8 +23,8 @@
 .zsh/aliases_linux.zsh
 .zsh/completion.zsh
 .zsh/functions
+.zsh/fzf.zsh
 .zsh/history.zsh
-.zsh/peco.zsh
 .zsh/prompt.zsh
 .zsh/rprompt.zsh
 .zsh/tmux.zsh
