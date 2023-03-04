@@ -84,18 +84,6 @@ hook_add = '''
 repo = 'thinca/vim-ref'
 on_cmd = 'Ref'
 
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-on_cmd = 'Denite'
-if = 'has("nvim") && has("python3")'
-hook_source = 'source ~/.vim/config/plugins/denite.vim'
-
-[[plugins]]
-repo = 'Shougo/defx.nvim'
-on_cmd = 'Defx'
-if = 'has("nvim") && has("python3")'
-hook_source = 'source ~/.vim/config/plugins/defx.vim'
-
 # For ddc.vim
 [[plugins]]
 repo = 'vim-denops/denops.vim'
@@ -192,3 +180,43 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+depends = ['denops.vim']
+if = "has('nvim')"
+on_cmd = 'Ddu'
+on_event = 'InsertEnter'
+hook_source = 'source ~/.vim/config/plugins/ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-commands.vim'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_substring'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'shun/ddu-source-buffer'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-ff'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
