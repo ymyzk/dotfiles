@@ -188,11 +188,11 @@ _load_library /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 
 _load_library $ZDOTDIR/aliases.zsh
 _load_library $ZDOTDIR/completion.zsh
-_load_library $ZDOTDIR/fzf.zsh
 _load_library $ZDOTDIR/history.zsh
+_load_library $ZDOTDIR/fzf.zsh # Must be after history.zsh
+_load_library $ZDOTDIR/peco.zsh
 _load_library $ZDOTDIR/prompt.zsh
 _load_library $ZDOTDIR/rprompt.zsh
-_load_library $ZDOTDIR/peco.zsh
 _load_library $ZDOTDIR/tmux.zsh
 _load_library $ZDOTDIR/yo/yo.zsh
 
