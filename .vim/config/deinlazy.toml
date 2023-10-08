@@ -133,10 +133,10 @@ hook_post_source = 'call lsp#enable()'
 repo = 'mattn/vim-lsp-settings'
 depends = ['vim-lsp']
 
-[[plugins]]
-repo = 'github/copilot.vim'
-on_source = 'ddc.vim'
-if = "has('nvim')"
+# [[plugins]]
+# repo = 'github/copilot.vim'
+# on_source = 'ddc.vim'
+# if = "has('nvim')"
 
 [[plugins]]
 repo = 'lervag/vimtex'
