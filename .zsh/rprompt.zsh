@@ -53,13 +53,12 @@ if is-at-least 4.3.11; then
             return 0
         fi
 
-        if [[ "${hook_com[branch]}" == "master" ]]; then
+        readonly local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+        if [[ "${hook_com[branch]}" == ${default_branch} ]]; then
             return 0
         fi
 
-        local nomerged
-        nomerged=$(command git rev-list master..${hook_com[branch]} 2>/dev/null | wc -l | tr -d ' ')
-
+        readonly local nomerged=$(command git rev-list ${default_branch}..${hook_com[branch]} 2>/dev/null | wc -l | tr -d ' ')
         if [[ "$nomerged" -gt 0 ]] ; then
             hook_com[misc]+="m${nomerged} "
         fi
