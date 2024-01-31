@@ -23,9 +23,8 @@
     cl      = clone
     cm      = commit -v
     co      = checkout
-    cob     = checkout -b
-    cod     = checkout develop
-    com     = checkout master
+    # cob     = checkout -b
+    # com     = checkout master
     df      = diff
     dfc     = diff --cached
     dfs     = diff -C --stat
@@ -38,6 +37,8 @@
     smst    = submodule status
     smsync  = submodule sync
     st      = status
+    swc     = switch -c
+    swm     = switch master
     l       = log
     lg      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
     lga     = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
