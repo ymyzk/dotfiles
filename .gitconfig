@@ -37,6 +37,7 @@
     smst    = submodule status
     smsync  = submodule sync
     st      = status
+    sw      = switch
     swc     = switch -c
     swm     = switch master
     l       = log
