@@ -53,7 +53,7 @@ if is-at-least 4.3.11; then
             return 0
         fi
 
-        readonly local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+        readonly local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
         if [[ "${hook_com[branch]}" == ${default_branch} ]]; then
             return 0
         fi
