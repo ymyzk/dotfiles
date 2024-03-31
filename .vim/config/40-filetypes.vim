@@ -1,8 +1,5 @@
 augroup filetypes
   autocmd!
-  autocmd BufRead,BufNewFile .jshintrc set filetype=javascript
-  " Needs plugin
-  autocmd BufRead,BufNewFile *.coffee set filetype=coffee
   autocmd BufRead,BufNewFile *.es6 set filetype=javascript
   autocmd BufRead,BufNewFile *.nasm set filetype=nasm
   autocmd BufRead,BufNewFile *.otex set filetype=tex
