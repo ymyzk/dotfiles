@@ -93,60 +93,6 @@ hook_add = '''
 repo = 'thinca/vim-ref'
 on_cmd = 'Ref'
 
-# For ddc.vim
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc.vim'
-depends = ['denops.vim']
-if = "has('nvim')"
-on_event = 'InsertEnter'
-hook_source = 'source ~/.vim/config/plugins/ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-around'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-filter-converter_remove_overlap'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-matcher_head'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-source-omni'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'shun/ddc-source-vim-lsp'
-depends = ['vim-lsp', 'vim-lsp-settings']
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-ui-native'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-# Language servers are not started automatically for some reasons with lazy loading
-hook_post_source = 'call lsp#enable()'
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-depends = ['vim-lsp']
-
-# [[plugins]]
-# repo = 'github/copilot.vim'
-# on_source = 'ddc.vim'
-# if = "has('nvim')"
-
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
@@ -194,6 +140,127 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 on_event = 'InsertEnter'
+
+# ddc and completion
+
+# For ddc.vim
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['denops.vim']
+if = "has('nvim')"
+on_event = 'InsertEnter'
+hook_source = 'source ~/.vim/config/plugins/ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-converter_remove_overlap'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+on_source = 'ddc.vim'
+depends = ['nvim-lspconfig']
+if = "has('nvim')"
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
+on_source = 'ddc.vim'
+
+# LSP
+
+# [[plugins]]
+# repo = 'github/copilot.vim'
+# on_source = 'ddc.vim'
+# if = "has('nvim')"
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+depends = ['mason.nvim', 'mason-lspconfig.nvim']
+if = "has('nvim')"
+lua_source = '''
+  -- Setup language servers.
+  local lspconfig = require('lspconfig')
+  -- lspconfig.pyright.setup {}
+  -- lspconfig.tsserver.setup {}
+  -- lspconfig.rust_analyzer.setup {
+  --   -- Server-specific settings. See `:help lspconfig-setup`
+  --   settings = {
+  --     ['rust-analyzer'] = {},
+  --   },
+  -- }
+
+  -- Global mappings.
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+  -- Use LspAttach autocommand to only map the following keys
+  -- after the language server attaches to the current buffer
+  vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+      -- Enable completion triggered by <c-x><c-o>
+      vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+      -- Buffer local mappings.
+      -- See `:help vim.lsp.*` for documentation on any of the below functions
+      local opts = { buffer = ev.buf }
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+      vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+      vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+      vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+      vim.keymap.set('n', '<space>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, opts)
+      vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+      vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+      vim.keymap.set('n', '<space>f', function()
+        vim.lsp.buf.format { async = true }
+      end, opts)
+    end,
+  })
+'''
+
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+lua_source = '''
+  require('mason').setup()
+'''
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+depends = ['mason.nvim']
+lua_source = '''
+  require('mason-lspconfig').setup()
+  require("mason-lspconfig").setup_handlers {
+    function(server_name)
+      require("lspconfig")[server_name].setup {}
+    end,
+  }
+'''
+
+# ddu
 
 [[plugins]]
 repo = 'Shougo/ddu.vim'

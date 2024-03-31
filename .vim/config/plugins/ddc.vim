@@ -12,15 +12,16 @@ call ddc#custom#patch_global('ui', 'native')
 " https://github.com/Shougo/ddc-source-around
 " https://github.com/shun/ddc-source-vim-lsp
 " TODO: Evaluate nvim-lsp
-call ddc#custom#patch_global('sources', ['vim-lsp', 'around'])
+call ddc#custom#patch_global('sources', ['lsp', 'around'])
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
 call ddc#custom#patch_global('sourceOptions', #{
-      \ _: #{
-      \   converters: ['converter_remove_overlap'],
-      \   matchers: ['matcher_head'],
-      \   sorters: ['sorter_rank']},
+      \   _: #{
+      \     converters: ['converter_remove_overlap'],
+      \     matchers: ['matcher_head'],
+      \     sorters: ['sorter_rank']
+      \   },
       \ })
 
 " Change source options
@@ -28,8 +29,9 @@ call ddc#custom#patch_global('sourceOptions', #{
       \   around: #{
       \     mark: '[A]'
       \   },
-      \   vim-lsp: #{
+      \   lsp: #{
       \     mark: '[LSP]',
+      \     forceCompletionPattern: '\.\w*|:\w*|->\w*',
       \   },
       \ })
 call ddc#custom#patch_global('sourceParams', #{
