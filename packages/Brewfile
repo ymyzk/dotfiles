@@ -57,7 +57,6 @@ brew 'pypy3'
 brew 'python'
 brew 'python3'
 brew 'qemu'
-brew 'reattach-to-user-namespace', args: ['with-wrap-launchctl', 'with-wrap-pbcopy-and-pbpaste']
 brew 'rlwrap'
 brew 'ruby'
 brew 'sbt'
