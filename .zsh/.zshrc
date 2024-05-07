@@ -43,6 +43,8 @@ function _load_library() {
 
 # PATH
 # Homebrew
+_add_path_if_exists /opt/homebrew/bin
+_add_path_if_exists /opt/homebrew/sbin
 _add_path_if_exists /usr/local/bin
 _add_path_if_exists /usr/local/sbin
 # Linuxbrew
