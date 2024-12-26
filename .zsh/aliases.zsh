@@ -33,6 +33,67 @@ alias remove-docker-dangling-images='docker rmi $(docker images --filter "dangli
 alias global-ip='curl -s http://checkip.amazonaws.com/ | tr -d "\n"'
 alias global-host='global-ip | xargs host'
 
+nodebrew-install-latest-binary() {
+  if [ -z "$1" ]; then
+    echo "Usage: nodebrew-install-latest-binary <major_version> [<major_version> ...]"
+    return 1
+  fi
+
+  for major_version in "$@"; do
+    local latest_version
+
+    # Fetch the list of available versions
+    local versions=$(nodebrew ls-remote 2>/dev/null | tr -s ' ' '\n')
+
+    if [ -z "$versions" ]; then
+      echo "Failed to fetch Node.js versions. Ensure nodebrew is installed and working."
+      return 1
+    fi
+
+    # Extract the latest version for the given major version
+    latest_version=$(echo "$versions" | grep -P "v${major_version}\\.\\d+\\.\\d+" | tail -n 1)
+
+    if [ -z "$latest_version" ]; then
+      echo "No available versions found for Node.js v${major_version}."
+      continue
+    fi
+
+    # Check if the latest version is already installed
+    local installed_versions=$(nodebrew ls | grep -P "v${major_version}\\.\\d+\\.\\d+")
+    if echo "$installed_versions" | grep -q "$latest_version"; then
+      echo "Node.js $latest_version is already installed. Skipping installation."
+    else
+      # Install the latest version
+      echo "Installing Node.js $latest_version..."
+      nodebrew install-binary "$latest_version"
+
+      if [ $? -eq 0 ]; then
+        echo "Node.js $latest_version installed successfully."
+      else
+        echo "Failed to install Node.js $latest_version."
+        continue
+      fi
+    fi
+
+    # Uninstall older versions of the same major version
+    echo "Uninstalling older versions of Node.js v${major_version}..."
+    local installed_versions=$(nodebrew ls | grep -P "v${major_version}\\.\\d+\\.\\d+")
+    echo "$installed_versions" | while read -r version; do
+      if [ "$version" != "$latest_version" ]; then
+        echo "Uninstalling $version..."
+        nodebrew uninstall "$version"
+      fi
+    done
+
+    echo "Cleanup complete for Node.js v${major_version}."
+  done
+
+  # Use the first major version specified
+  local first_major_version="$1"
+  echo "Switching to Node.js v${first_major_version}..."
+  nodebrew use "v${first_major_version}"
+}
+
 # Suffix aliases
 
 alias -s js=node
