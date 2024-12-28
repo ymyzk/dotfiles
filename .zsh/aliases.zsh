@@ -39,6 +39,13 @@ nodebrew-install-latest-binary() {
     return 1
   fi
 
+  local grep_option
+  if [ $uname = 'Darwin' ]; then
+    grep_option='-E'
+  else
+    grep_option='-P'
+  fi
+
   for major_version in "$@"; do
     local latest_version
 
@@ -51,7 +58,7 @@ nodebrew-install-latest-binary() {
     fi
 
     # Extract the latest version for the given major version
-    latest_version=$(echo "$versions" | grep -P "v${major_version}\\.\\d+\\.\\d+" | tail -n 1)
+    latest_version=$(echo "$versions" | grep "$grep_option" "v${major_version}\\.\\d+\\.\\d+" | tail -n 1)
 
     if [ -z "$latest_version" ]; then
       echo "No available versions found for Node.js v${major_version}."
@@ -59,7 +66,7 @@ nodebrew-install-latest-binary() {
     fi
 
     # Check if the latest version is already installed
-    local installed_versions=$(nodebrew ls | grep -P "v${major_version}\\.\\d+\\.\\d+")
+    local installed_versions=$(nodebrew ls | grep "$grep_option" "v${major_version}\\.\\d+\\.\\d+")
     if echo "$installed_versions" | grep -q "$latest_version"; then
       echo "Node.js $latest_version is already installed. Skipping installation."
     else
@@ -77,7 +84,7 @@ nodebrew-install-latest-binary() {
 
     # Uninstall older versions of the same major version
     echo "Uninstalling older versions of Node.js v${major_version}..."
-    local installed_versions=$(nodebrew ls | grep -P "v${major_version}\\.\\d+\\.\\d+")
+    local installed_versions=$(nodebrew ls | grep "$grep_option" "v${major_version}\\.\\d+\\.\\d+")
     echo "$installed_versions" | while read -r version; do
       if [ "$version" != "$latest_version" ]; then
         echo "Uninstalling $version..."
