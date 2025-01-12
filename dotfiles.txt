@@ -1,6 +1,7 @@
 .gitconfig
 .gitignore_global
 .tmux.conf
+.config/ghostty/config
 .config/nvim/after/ftplugin
 .config/nvim/config/20-dein_start.vim
 .config/nvim/config/40-filetypes.vim
